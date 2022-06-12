@@ -7,6 +7,9 @@ radius = 8.00002
 height = 42.0
 
 [node name="Big_Rock" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 

@@ -3,6 +3,9 @@
 [ext_resource path="res://Assets/Items and objects/Ritual Circle.png" type="Texture" id=1]
 
 [node name="Ritual_Circle" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.421569, 0.398734 )

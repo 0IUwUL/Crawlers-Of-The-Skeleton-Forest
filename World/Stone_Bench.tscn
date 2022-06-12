@@ -6,6 +6,9 @@
 extents = Vector2( 5, 12 )
 
 [node name="Stone_Bench" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 8, 0 )
