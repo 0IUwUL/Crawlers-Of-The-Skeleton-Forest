@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Assets/Items and objects/TX Props.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 8 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 16.0
 
 [node name="Broken well" type="StaticBody2D"]
 
@@ -19,4 +20,5 @@ vframes = 6
 frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
 shape = SubResource( 1 )
