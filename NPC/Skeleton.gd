@@ -4,9 +4,9 @@ var velocity = Vector2.ZERO
 #helps the movement to be faster than the frames
 const MAX_SPEED = 50
 #adds boost when moving for a long time
-const ACCELARATION = 30
+const ACCELARATION = 100
 #slide on stop
-const FRICTION = 5
+const FRICTION = 20
 
 onready var animationplayer = $AnimationPlayer
 onready var animationtree = $AnimationTree
