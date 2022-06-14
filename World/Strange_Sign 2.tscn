@@ -9,6 +9,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.8125, 0.864726 )
+z_index = -1
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 7
