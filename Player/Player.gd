@@ -18,7 +18,7 @@ onready var animationplayer = $AnimationPlayer
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback")
 
-func _onready():
+func _ready():
 	animationtree.active = true
 
 func _physics_process(delta):
@@ -50,4 +50,8 @@ func move_state(delta):
 		state=ATTACK
 
 func attack_state(delta):
+	velocity = Vector2.ZERO
 	animationstate.travel("Attack")
+	
+func attack_animation_done():
+	state = MOVE

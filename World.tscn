@@ -54,3 +54,30 @@ position = Vector2( 69, 67 )
 
 [node name="Tree" parent="." instance=ExtResource( 9 )]
 position = Vector2( 207, 49 )
+
+[node name="Slime2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 80, 72 )
+
+[node name="Slime3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 104, 80 )
+
+[node name="Slime4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 168, 48 )
+
+[node name="Slime5" parent="." instance=ExtResource( 19 )]
+position = Vector2( 80, 88 )
+
+[node name="Slime6" parent="." instance=ExtResource( 19 )]
+position = Vector2( 88, 56 )
+
+[node name="Slime7" parent="." instance=ExtResource( 19 )]
+position = Vector2( 200, 88 )
+
+[node name="Slime8" parent="." instance=ExtResource( 19 )]
+position = Vector2( 80, 128 )
+
+[node name="Slime9" parent="." instance=ExtResource( 19 )]
+position = Vector2( 24, 128 )
+
+[node name="Slime10" parent="." instance=ExtResource( 19 )]
+position = Vector2( 16, 24 )
