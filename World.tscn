@@ -24,6 +24,9 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
 
+[node name="Ritual_Circle" parent="." instance=ExtResource( 16 )]
+position = Vector2( 144, 24 )
+
 [node name="Tree4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 112 )
 
@@ -68,9 +71,6 @@ position = Vector2( 112, 80 )
 
 [node name="Cross_Thin" parent="." instance=ExtResource( 14 )]
 position = Vector2( 104, 32 )
-
-[node name="Ritual_Circle" parent="." instance=ExtResource( 16 )]
-position = Vector2( 144, 24 )
 
 [node name="Tomb_Horizontal" parent="." instance=ExtResource( 17 )]
 position = Vector2( 64, 104 )
