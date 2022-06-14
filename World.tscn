@@ -1,79 +1,24 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Sign.tscn" type="PackedScene" id=3]
-[ext_resource path="res://World/Broken well.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/Strange signs.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://World/Statue_Praying.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/Stone_Bench.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/Stone_Bench_Horizontal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/Big_Rock.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/Stone_Lamp.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Strange_Sign 2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://World/Broken_Pillar.tscn" type="PackedScene" id=13]
-[ext_resource path="res://World/Cross_Thin.tscn" type="PackedScene" id=14]
-[ext_resource path="res://World/RIP_Statu_Thick.tscn" type="PackedScene" id=15]
-[ext_resource path="res://World/Ritual_Circle.tscn" type="PackedScene" id=16]
-[ext_resource path="res://World/Tomb_Horizontal.tscn" type="PackedScene" id=17]
-[ext_resource path="res://World/Tomb_Vertical.tscn" type="PackedScene" id=18]
+[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=19]
+[ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=20]
 
 [node name="World" type="YSort"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
 
-[node name="Ritual_Circle" parent="." instance=ExtResource( 16 )]
-position = Vector2( 144, 24 )
-
-[node name="Tree4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 112 )
-
-[node name="Sign" parent="." instance=ExtResource( 3 )]
-position = Vector2( 88, 72 )
-
-[node name="Broken well" parent="." instance=ExtResource( 4 )]
-position = Vector2( 56, 136 )
-
-[node name="Strange signs" parent="." instance=ExtResource( 5 )]
-position = Vector2( 48, 72 )
-
 [node name="Strange Pillar" parent="." instance=ExtResource( 6 )]
 position = Vector2( 32, 88 )
 
-[node name="Statue_Praying" parent="." instance=ExtResource( 7 )]
-position = Vector2( 184, 48 )
+[node name="Slime" parent="." instance=ExtResource( 19 )]
+position = Vector2( 88, 40 )
 
-[node name="Stone_Bench" parent="." instance=ExtResource( 8 )]
-position = Vector2( 208, 104 )
-
-[node name="Stone_Bench_Horizontal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 240, 112 )
+[node name="Skeleton" parent="." instance=ExtResource( 20 )]
+position = Vector2( 184, 80 )
 
 [node name="Big_Rock" parent="." instance=ExtResource( 10 )]
-position = Vector2( 288, 64 )
-
-[node name="Broken well2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 280, 128 )
-
-[node name="Stone_Lamp" parent="." instance=ExtResource( 11 )]
-position = Vector2( 128, 56 )
-
-[node name="Strange_Sign 2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 104, 120 )
-
-[node name="Broken_Pillar" parent="." instance=ExtResource( 13 )]
-position = Vector2( 232, 48 )
-
-[node name="RIP_Statu_Thick" parent="." instance=ExtResource( 15 )]
-position = Vector2( 112, 80 )
-
-[node name="Cross_Thin" parent="." instance=ExtResource( 14 )]
-position = Vector2( 104, 32 )
-
-[node name="Tomb_Horizontal" parent="." instance=ExtResource( 17 )]
-position = Vector2( 64, 104 )
-
-[node name="Tomb_Vertical" parent="." instance=ExtResource( 18 )]
-position = Vector2( 152, 72 )
+position = Vector2( 136, 96 )

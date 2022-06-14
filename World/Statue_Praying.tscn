@@ -6,6 +6,9 @@
 height = 2.0
 
 [node name="Statue_Praying" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 

@@ -7,6 +7,9 @@ radius = 6.0
 height = 0.0
 
 [node name="Cross_Thin" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 

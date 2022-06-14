@@ -6,6 +6,9 @@
 extents = Vector2( 5, 8 )
 
 [node name="Tomb_Vertical" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -0.125 )
