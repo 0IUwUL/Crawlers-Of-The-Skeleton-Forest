@@ -3,6 +3,9 @@
 [ext_resource path="res://Assets/Items and objects/TX Props.png" type="Texture" id=1]
 
 [node name="Strange_Sign 2" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.8125, 0.864726 )

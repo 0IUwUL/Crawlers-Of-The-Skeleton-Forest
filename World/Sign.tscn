@@ -6,6 +6,9 @@
 extents = Vector2( 4, 4 )
 
 [node name="Sign" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 

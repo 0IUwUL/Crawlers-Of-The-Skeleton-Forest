@@ -6,6 +6,9 @@
 extents = Vector2( 10.75, 8 )
 
 [node name="Stone_Bench_Horizontal" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 8.43749, -9.53674e-07 )
