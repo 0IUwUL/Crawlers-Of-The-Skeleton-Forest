@@ -1,0 +1,232 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Long_Log.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Broken well.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Tree2_WBerries.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/TallBush.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Tree1_WBerries.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Small_Rock2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Logsw_Mushroom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Statue_Praying.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/LargeStump.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/Big_Rock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Broken_Pillar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/AnotherTree1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/SmallRock3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/Ritual_Circle.tscn" type="PackedScene" id=18]
+[ext_resource path="res://World/Stone_Lamp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Map Layout/tilesets/grass.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark-grass-tileset.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-vertical.png" type="Texture" id=23]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Dark-grass-tileset.png 0"
+0/texture = ExtResource( 21 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 216, 169, 143, 68 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 438, Vector2( 0, 1 ), 54, Vector2( 0, 2 ), 432, Vector2( 0, 3 ), 438, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 63, Vector2( 1, 2 ), 504, Vector2( 1, 3 ), 511, Vector2( 2, 0 ), 292, Vector2( 2, 1 ), 36, Vector2( 2, 2 ), 288, Vector2( 2, 3 ), 292, Vector2( 3, 0 ), 511, Vector2( 3, 1 ), 63, Vector2( 3, 2 ), 504, Vector2( 3, 3 ), 511, Vector2( 4, 0 ), 365, Vector2( 4, 1 ), 45, Vector2( 4, 2 ), 360, Vector2( 4, 3 ), 365, Vector2( 5, 0 ), 511, Vector2( 5, 1 ), 63, Vector2( 5, 2 ), 504, Vector2( 5, 3 ), 511, Vector2( 6, 0 ), 219, Vector2( 6, 1 ), 27, Vector2( 6, 2 ), 72, Vector2( 6, 3 ), 73, Vector2( 7, 0 ), 511, Vector2( 7, 1 ), 63, Vector2( 7, 2 ), 504, Vector2( 7, 3 ), 511, Vector2( 8, 0 ), 219, Vector2( 8, 1 ), 27, Vector2( 8, 2 ), 216, Vector2( 8, 3 ), 219 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Boss Room awit" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1, -1, 202, 0, 479, 0, 481, 137, 480, 270, 354, 270, 457, 195, 469, 128, 469, 36, 468, 11, 284, 3, 178, 3, 85, 4, 38, 28, 33, 89, 33, 164, 36, 227, 160, 259, 169, 269, 0, 270, 0, 130 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 2.28095, 5.09434 )
+texture = ExtResource( 20 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0.461426, 11.867, 210.817, 53.0015 )
+
+[node name="DarkGrass" type="TileMap" parent="Background"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 1610612736, 196609, 1, 1610612736, 196609, 2, 1610612736, 196609, 3, 1610612736, 196609, 4, 1610612736, 196609, 5, 1610612736, 196609, 6, 1610612736, 196609, 7, 1610612736, 196609, 8, 1610612736, 196609, 9, 1610612736, 196609, 10, 1610612736, 196609, 11, 1610612736, 196609, 12, 1610612736, 196609, 13, 1610612736, 196609, 65536, 1610612736, 196609, 65537, 1610612736, 196609, 65538, 1610612736, 196609, 65539, 1610612736, 196609, 65540, 1610612736, 196609, 65541, 1610612736, 196609, 65542, 1610612736, 196609, 65543, 1610612736, 196609, 65544, 1610612736, 196609, 65545, 1610612736, 196609, 65546, 1610612736, 196609, 65547, 1610612736, 196609, 65548, 1610612736, 196609, 65549, 1610612736, 196609, 131072, 1610612736, 196609, 131073, 1610612736, 65537, 131074, 1610612736, 196609, 131075, 1610612736, 196609, 131076, 1610612736, 196609, 131077, 1610612736, 196609, 131078, 1610612736, 196609, 131079, 1610612736, 196609, 131080, 1610612736, 196609, 131081, 1610612736, 196609, 131082, 1610612736, 196609, 131083, 1610612736, 196609, 131084, 1610612736, 196609, 131085, 1610612736, 196609, 196608, 1610612736, 196609, 196609, 1610612736, 196609, 196610, 1610612736, 196609, 196611, 1610612736, 196609, 196612, 1610612736, 196609, 196613, 1610612736, 196609, 196614, 1610612736, 196609, 196615, 1610612736, 196609, 196616, 1610612736, 196609, 196617, 1610612736, 196609, 196618, 1610612736, 196609, 196619, 1610612736, 196609, 196620, 1610612736, 196609, 196621, 1610612736, 196609 )
+
+[node name="Stone-path-tileset-vertical" type="Sprite" parent="Background"]
+position = Vector2( 107.85, 36.3148 )
+scale = Vector2( 0.438413, 0.196296 )
+texture = ExtResource( 23 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 241, 114 )
+
+[node name="AnotherTree1" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 64, 22 )
+
+[node name="Big_Rock" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 402, 99 )
+
+[node name="Big_Rock2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 49, 151 )
+
+[node name="Tree" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 116, 1 )
+
+[node name="Tree2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 19, 56 )
+
+[node name="Tree2_WBerries" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 29, 9 )
+
+[node name="Tree2_WBerries2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 407, 213 )
+
+[node name="Tree3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 459, 161 )
+
+[node name="Tree4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 417, 230 )
+
+[node name="Tree1_WBerries" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 457, 230 )
+
+[node name="AnotherTree3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 446, 13 )
+
+[node name="Tree5" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 359, -4 )
+
+[node name="Tree2_WBerries3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 459, 48 )
+
+[node name="Tree1_WBerries2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 394, 35 )
+
+[node name="Tree1_WBerries3" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 27, 206 )
+
+[node name="AnotherTree2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 369, 242 )
+
+[node name="Tree6" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 85, 216 )
+
+[node name="Tree7" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 17, 234 )
+
+[node name="Tree2_WBerries4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 145, 225 )
+
+[node name="Bush" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 423, 120 )
+
+[node name="AnotherTree4" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 330, 17 )
+
+[node name="AnotherTree5" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 51, 220 )
+
+[node name="Bush2" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 23, 162 )
+
+[node name="Long_Log" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 72, 68 )
+
+[node name="Logsw_Mushroom" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 406, 139 )
+
+[node name="Broken well" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 409, 173 )
+
+[node name="Broken_Pillar" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 314, 50 )
+
+[node name="Strange Pillar" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 178, 62 )
+
+[node name="Statue_Praying" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 244, 18 )
+
+[node name="Stone_Lamp" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 278, 34 )
+
+[node name="Stone_Lamp2" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 215, 35 )
+
+[node name="Broken_Pillar2" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 222, 3 )
+
+[node name="Strange Pillar2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 272, 13 )
+
+[node name="Tree8" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 67, 94 )
+
+[node name="TallBush2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 371, 63 )
+
+[node name="TallBush" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 36, 104 )
+
+[node name="LargeStump2" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 112, 44 )
+
+[node name="LargeStump3" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 349, 47 )
+
+[node name="LargeStump4" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 116, 190 )
+
+[node name="LargeStump5" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 117, 249 )
+
+[node name="LargeStump" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 371, 186 )
+
+[node name="LargeStump6" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 457, 110 )
+
+[node name="TallBush3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 422, 18 )
+
+[node name="SmallRock3" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 353, 84 )
+
+[node name="SmallRock4" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 113, 93 )
+
+[node name="SmallRock5" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 378, 124 )
+
+[node name="Small_Rock2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 67, 180 )
+
+[node name="AnotherTree6" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 155, 9 )
+
+[node name="Ritual_Circle" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( 246, 57 )
+
+[node name="Sprite" parent="YSort/Ritual_Circle" index="0"]
+z_index = 0
+
+[editable path="YSort/Ritual_Circle"]
