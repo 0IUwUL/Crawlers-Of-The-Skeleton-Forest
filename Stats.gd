@@ -14,5 +14,6 @@ func set_health(h):
 	health = h
 	if health <= 0:
 		emit_signal("no_health")
+	
 
 

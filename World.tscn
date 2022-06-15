@@ -21,7 +21,7 @@ position = Vector2( 56, 32 )
 position = Vector2( 139, 37 )
 
 [node name="Slime2" parent="YSort/Slimes" instance=ExtResource( 19 )]
-position = Vector2( 139, 43 )
+position = Vector2( 312, 50 )
 
 [node name="Lancer" type="YSort" parent="YSort"]
 visible = false
