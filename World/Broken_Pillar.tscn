@@ -11,6 +11,7 @@ height = 0.0
 position = Vector2( -9.53674e-07, 0 )
 scale = Vector2( 0.621212, 0.612676 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 7 )
