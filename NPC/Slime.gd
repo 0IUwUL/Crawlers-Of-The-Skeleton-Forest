@@ -1,41 +1,55 @@
 extends KinematicBody2D
 
+const DeathEffect = preload("res://Effects/SlimeDeath.tscn")
+
+var knockback = Vector2.ZERO
+
+onready var stats = $Stats
+onready var playerDetection = $PlayerDetection
+onready var sprite = $AnimatedSprite
+onready var hurtbox = $Hurtbox
+
+enum {
+	IDLE,
+	WANDER,
+	CHASE
+}
+
 var velocity = Vector2.ZERO
-#helps the movement to be faster than the frames
-const MAX_SPEED = 50
-#adds boost when moving for a long time
-const ACCELARATION = 30
-#slide on stop
-const FRICTION = 5
+var state = CHASE
 
-onready var animationplayer = $AnimationPlayer
-onready var animationtree = $AnimationTree
-onready var animationstate = animationtree.get("parameters/playback")
-
-
-func _ready():
-	animationtree.active = true
+func _physics_process(delta):
+	knockback = knockback.move_toward(Vector2.ZERO, stats.Friction*delta)
+	knockback = move_and_slide(knockback)
 	
-
-#
-#func _physics_process(delta):
-#	var input_vector = Vector2.ZERO
-#	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-#	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-#	input_vector = input_vector.normalized()
-#
-#	if input_vector != Vector2.ZERO:
-#		animationtree.set("parameters/Idle/blend_position", input_vector)
-#		animationtree.set("parameters/Run/blend_position", input_vector)
-#		animationstate.travel("Run")
-#		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELARATION * delta)
-#	else:
-#		animationstate.travel("Idle")
-#		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-##	
-#	velocity = move_and_slide(velocity)
-
-
+	match state:
+		IDLE:
+			velocity = velocity.move_toward(Vector2.ZERO, stats.Friction*delta)
+			seek_player()
+		WANDER:
+			pass
+		CHASE:
+			var player = playerDetection.player
+			if player != null:
+				var direction = (player.global_position - global_position).normalized()
+				velocity = velocity.move_toward(direction * stats.Speed, stats.Acceleration * delta)
+			else:
+				state = IDLE
+			
+			sprite.flip_h = velocity.x<0
+	velocity = move_and_slide(velocity)
+		
+func seek_player():
+	if playerDetection.can_see_player():
+		state = CHASE
+	
 func _on_Hurtbox_area_entered(area):
-	queue_free()
+	stats.health -= area.damage
+	knockback = area.knockback_vector * 125
+	hurtbox.create_hit_effect()
 	
+func _on_Stats_no_health():
+	queue_free()
+	var slimeDeath = DeathEffect.instance()
+	get_parent().add_child(slimeDeath)
+	slimeDeath.global_position = global_position

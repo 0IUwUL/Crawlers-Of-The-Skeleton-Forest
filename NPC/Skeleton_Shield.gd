@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var knockback = Vector2.ZERO
 
-const DeathEffect = preload("res://Effects/SkeletonDeath.tscn")
+const DeathEffect = preload("res://Effects/SkeletonWShield.tscn")
 
 onready var stats = $Stats
 onready var playerDetection = $PlayerDetection
@@ -44,10 +44,10 @@ func seek_player():
 	
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 110
-	
+	knockback = area.knockback_vector * stats.Friction
+
 func _on_Stats_no_health():
 	queue_free()
-	var skeletonDeath = DeathEffect.instance()
-	get_parent().add_child(skeletonDeath)
-	skeletonDeath.global_position = global_position
+	var skeletonWShieldDeath = DeathEffect.instance()
+	get_parent().add_child(skeletonWShieldDeath)
+	skeletonWShieldDeath.global_position = global_position

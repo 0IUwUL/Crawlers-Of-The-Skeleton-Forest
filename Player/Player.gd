@@ -1,25 +1,31 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO
+export var velocity = Vector2.ZERO
 #helps the movement to be faster than the frames
-const MAX_SPEED = 100
+export var MAX_SPEED = 100
 #adds boost when moving for a long time
-const ACCELARATION = 200
+export var ACCELARATION = 200
 #slide on stop
-const FRICTION = 50
+export var FRICTION = 50
 
 enum{
 	MOVE,
 	ATTACK
 }
 var state = MOVE
+var roll_vector =  Vector2.ZERO
+var stats = PlayerStats
 
 onready var animationplayer = $AnimationPlayer
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback")
+onready var swordhitbox = $SwordHitBox/HitBox
+onready var hurtbox = $Hurtbox
 
 func _ready():
+	stats.connect("no_health", self, "queue_free")
 	animationtree.active = true
+	swordhitbox.knockback_vector = roll_vector
 
 func _physics_process(delta):
 	match state:
@@ -35,6 +41,7 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		swordhitbox.knockback_vector = input_vector
 		animationtree.set("parameters/Idle/blend_position", input_vector)
 		animationtree.set("parameters/Run/blend_position", input_vector)
 		animationtree.set("parameters/Attack/blend_position", input_vector)
@@ -55,3 +62,9 @@ func attack_state(delta):
 	
 func attack_animation_done():
 	state = MOVE
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	hurtbox.start_invinc(0.5)
+	hurtbox.create_hit_effect()
