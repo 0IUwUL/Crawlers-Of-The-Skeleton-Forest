@@ -16,7 +16,6 @@
 position = Vector2( 56, 32 )
 
 [node name="Slimes" type="YSort" parent="YSort"]
-visible = false
 
 [node name="Slime" parent="YSort/Slimes" instance=ExtResource( 19 )]
 position = Vector2( 139, 37 )
@@ -34,6 +33,7 @@ position = Vector2( 139, 76 )
 position = Vector2( 139, 70 )
 
 [node name="Skeletons" type="YSort" parent="YSort"]
+visible = false
 position = Vector2( 140, 17 )
 
 [node name="Skeleton_Shield" parent="YSort/Skeletons" instance=ExtResource( 2 )]

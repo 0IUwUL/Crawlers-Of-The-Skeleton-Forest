@@ -14,6 +14,10 @@ config/name="Crawlers Of The Skeleton Forest"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://Player/Player Stats.tscn"
+
 [display]
 
 window/size/width=480
