@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var knockback = Vector2.ZERO
 
+const DeathEffect = preload("res://Effects/LancerDeath.tscn")
+
 onready var stats = $Stats
 
 func _physics_process(delta):
@@ -14,3 +16,6 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	queue_free()
+	var lancerDeath = DeathEffect.instance()
+	get_parent().add_child(lancerDeath)
+	lancerDeath.global_position = global_position

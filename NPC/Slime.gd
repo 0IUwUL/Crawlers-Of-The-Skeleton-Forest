@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const DeathEffect = preload("res://Effects/SlimeDeath.tscn")
+
 var knockback = Vector2.ZERO
 
 onready var stats = $Stats
@@ -15,3 +17,6 @@ func _on_Hurtbox_area_entered(area):
 	
 func _on_Stats_no_health():
 	queue_free()
+	var slimeDeath = DeathEffect.instance()
+	get_parent().add_child(slimeDeath)
+	slimeDeath.global_position = global_position
