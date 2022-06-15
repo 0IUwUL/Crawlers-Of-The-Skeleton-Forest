@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://World/TallBush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -98,10 +98,6 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 7.5
-height = 12.0
-
 [node name="First Floor" type="Node2D"]
 position = Vector2( 104, 46 )
 
@@ -121,7 +117,6 @@ tile_data = PoolIntArray( -917502, -1073741823, 65541, -851966, -1073741823, 655
 
 [node name="TileMap2" type="TileMap" parent="Sprite"]
 position = Vector2( 0.806641, 10.35 )
-scale = Vector2( 1, 1 )
 tile_set = SubResource( 3 )
 show_collision = true
 format = 1
@@ -141,11 +136,10 @@ position = Vector2( 127.143, -63.3936 )
 scale = Vector2( 1.31075, 1.13203 )
 texture = ExtResource( 23 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 15 )
-shape = SubResource( 1 )
-
 [node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -79, 192 )
 
 [node name="Slime11" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( -73, 15 )
@@ -204,9 +198,6 @@ position = Vector2( 330, 53 )
 [node name="Statue_Praying" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 152, 7 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -79, 192 )
-
 [node name="Tomb_Vertical4" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 155, 31 )
 
@@ -258,16 +249,16 @@ position = Vector2( 187, 56 )
 [node name="Skeleton5" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 196, 11 )
 
-[node name="Skeleton4" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 118, 15 )
+[node name="TombHorizontal" type="Sprite" parent="YSort"]
+position = Vector2( -289, 229 )
+texture = ExtResource( 21 )
 
-[node name="TombVertical" type="Sprite" parent="YSort/Skeleton4"]
-position = Vector2( -413, 221 )
+[node name="TombVertical" type="Sprite" parent="YSort"]
+position = Vector2( -295, 236 )
 texture = ExtResource( 7 )
 
-[node name="TombHorizontal" type="Sprite" parent="YSort/Skeleton4/TombVertical"]
-position = Vector2( 6, -7 )
-texture = ExtResource( 21 )
+[node name="Skeleton4" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 118, 15 )
 
 [node name="Slime10" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 341, 24 )
@@ -311,24 +302,24 @@ scale = Vector2( 0.762921, 0.883371 )
 [node name="Skeleton9" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 94, 142 )
 
+[node name="SmallRock3" type="Sprite" parent="YSort"]
+position = Vector2( 263, 106 )
+texture = ExtResource( 20 )
+
 [node name="Tree2WBerries" type="Sprite" parent="YSort"]
 position = Vector2( 310, 96 )
 texture = ExtResource( 11 )
 
+[node name="SmallRock4" type="Sprite" parent="YSort"]
+position = Vector2( 198, 204 )
+texture = ExtResource( 20 )
+
+[node name="SmallRock5" type="Sprite" parent="YSort"]
+position = Vector2( 135, 208 )
+texture = ExtResource( 20 )
+
 [node name="Skeleton6" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 33, 80 )
-
-[node name="SmallRock3" type="Sprite" parent="YSort/Skeleton6"]
-position = Vector2( 230, 26 )
-texture = ExtResource( 20 )
-
-[node name="SmallRock4" type="Sprite" parent="YSort/Skeleton6"]
-position = Vector2( 165, 124 )
-texture = ExtResource( 20 )
-
-[node name="SmallRock5" type="Sprite" parent="YSort/Skeleton6"]
-position = Vector2( 102, 128 )
-texture = ExtResource( 20 )
 
 [node name="Slime16" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 53, 165 )
@@ -361,13 +352,13 @@ position = Vector2( -93, 47 )
 [node name="Skeleton11" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -69, 56 )
 
+[node name="BigRock3" type="Sprite" parent="YSort"]
+position = Vector2( 123, -33 )
+texture = ExtResource( 14 )
+
 [node name="LargeStump" type="Sprite" parent="YSort"]
 position = Vector2( 57, -36 )
 texture = ExtResource( 22 )
-
-[node name="BigRock" type="Sprite" parent="YSort/LargeStump"]
-position = Vector2( 66, 3 )
-texture = ExtResource( 14 )
 
 [node name="LargeStump2" type="Sprite" parent="YSort"]
 position = Vector2( 190, -32 )
