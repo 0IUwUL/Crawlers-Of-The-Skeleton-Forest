@@ -18,24 +18,24 @@ func _ready():
 	
 
 #
-func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized()
+#func _physics_process(delta):
+#	var input_vector = Vector2.ZERO
+#	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+#	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+#	input_vector = input_vector.normalized()
+#
+#	if input_vector != Vector2.ZERO:
+#		animationtree.set("parameters/Idle/blend_position", input_vector)
+#		animationtree.set("parameters/Run/blend_position", input_vector)
+#		animationstate.travel("Run")
+#		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELARATION * delta)
+#	else:
+#		animationstate.travel("Idle")
+#		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+##	
+#	velocity = move_and_slide(velocity)
 
-	if input_vector != Vector2.ZERO:
-		animationtree.set("parameters/Idle/blend_position", input_vector)
-		animationtree.set("parameters/Run/blend_position", input_vector)
-		animationstate.travel("Run")
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELARATION * delta)
-	else:
-		animationstate.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-#	
-	velocity = move_and_slide(velocity)
 
-
-#func _on_Hurtbox_area_entered(area):
-#	queue_free()
+func _on_Hurtbox_area_entered(area):
+	queue_free()
 	

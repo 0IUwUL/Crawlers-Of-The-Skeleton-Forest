@@ -1,18 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Tomb_Vertical.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Tomb_Horizontal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Tree1_WBerries.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Logsw_Mushroom.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Strange signs.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/Strange_Sign 2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Tree2_WBerries.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Small rock.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/RIP_Statu_Thick.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Long_Log.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/Big_Rock.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/Cross_Thin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Ritual_Circle.tscn" type="PackedScene" id=12]
-[ext_resource path="res://World/Statue_Praying.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Small_Rock2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/TallBush.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/LargeStump.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/AnotherTree1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/SmallRock3.tscn" type="PackedScene" id=15]
 [ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=19]
 [ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=20]
 
@@ -20,9 +22,6 @@
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
-
-[node name="Strange Pillar" parent="." instance=ExtResource( 6 )]
-position = Vector2( 32, 88 )
 
 [node name="Slime" parent="." instance=ExtResource( 19 )]
 position = Vector2( 88, 40 )
@@ -33,18 +32,6 @@ position = Vector2( 184, 80 )
 [node name="Big_Rock" parent="." instance=ExtResource( 10 )]
 position = Vector2( 136, 96 )
 
-[node name="Tomb_Vertical" parent="." instance=ExtResource( 2 )]
-position = Vector2( 118, 29 )
-
-[node name="Tomb_Horizontal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 123, 62 )
-
-[node name="Cross_Thin" parent="." instance=ExtResource( 11 )]
-position = Vector2( 169, 28 )
-
-[node name="RIP_Statu_Thick" parent="." instance=ExtResource( 8 )]
-position = Vector2( 197, 35 )
-
 [node name="Small rock" parent="." instance=ExtResource( 7 )]
 position = Vector2( 143, 31 )
 
@@ -53,9 +40,6 @@ position = Vector2( 155, 57 )
 
 [node name="Strange signs" parent="." instance=ExtResource( 4 )]
 position = Vector2( 69, 67 )
-
-[node name="Tree" parent="." instance=ExtResource( 9 )]
-position = Vector2( 207, 49 )
 
 [node name="Slime2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 80, 72 )
@@ -84,8 +68,38 @@ position = Vector2( 24, 128 )
 [node name="Slime10" parent="." instance=ExtResource( 19 )]
 position = Vector2( 16, 24 )
 
-[node name="Ritual_Circle" parent="." instance=ExtResource( 12 )]
-position = Vector2( 241, 89 )
+[node name="Tree1_WBerries" parent="." instance=ExtResource( 2 )]
+position = Vector2( 280, 74 )
 
-[node name="Statue_Praying" parent="." instance=ExtResource( 13 )]
-position = Vector2( 56, 8 )
+[node name="Tree2_WBerries" parent="." instance=ExtResource( 6 )]
+position = Vector2( 223, 132 )
+
+[node name="Logsw_Mushroom" parent="." instance=ExtResource( 3 )]
+position = Vector2( 204, 40 )
+
+[node name="TallBush" parent="." instance=ExtResource( 12 )]
+position = Vector2( 230, 60 )
+
+[node name="SmallRock3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 113, 129 )
+
+[node name="Small_Rock2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 157, 152 )
+
+[node name="Small rock2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 168, 120 )
+
+[node name="Long_Log" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84, 118 )
+
+[node name="LargeStump" parent="." instance=ExtResource( 13 )]
+position = Vector2( 10, 78 )
+
+[node name="Logsw_Mushroom2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 119, 145 )
+
+[node name="AnotherTree1" parent="." instance=ExtResource( 14 )]
+position = Vector2( 267, 131 )
+
+[node name="Tree" parent="." instance=ExtResource( 9 )]
+position = Vector2( 37, 86 )
