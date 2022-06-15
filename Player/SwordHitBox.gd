@@ -1,2 +1,4 @@
-extends Position2D
+extends Node2D
+
+onready vaar 
 

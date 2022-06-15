@@ -660,6 +660,9 @@ graph_offset = Vector2( -45.0381, 113.678 )
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
@@ -692,7 +695,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 15 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Run/blend_position = Vector2( -0.471338, 0.241379 )
+parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="SwordHitBox" type="Position2D" parent="."]
 rotation = 1.5708
