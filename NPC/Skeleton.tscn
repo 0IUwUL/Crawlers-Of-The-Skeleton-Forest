@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/NPC/skeleton.png" type="Texture" id=1]
 [ext_resource path="res://NPC/Skeleton.gd" type="Script" id=2]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 1 )
@@ -72,6 +73,18 @@ region = Rect2( 256, 0, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 320, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 192, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 256, 64, 64 )
@@ -92,18 +105,6 @@ region = Rect2( 192, 256, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 256, 256, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 192, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 192, 64, 64 )
-
 [sub_resource type="SpriteFrames" id=53]
 animations = [ {
 "frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
@@ -121,14 +122,14 @@ animations = [ {
 "name": "Idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "Death",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
 "loop": true,
 "name": "Damage",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "Death",
 "speed": 10.0
 } ]
 
@@ -147,6 +148,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -20 )
 frames = SubResource( 53 )
 animation = "Idle"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -161,6 +163,10 @@ collision_layer = 8
 position = Vector2( -0.5, -6.5 )
 shape = SubResource( 46 )
 
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 3
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
