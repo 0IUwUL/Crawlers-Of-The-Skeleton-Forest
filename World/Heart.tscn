@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Items and objects/Heart.png" type="Texture" id=1]
+
+[node name="Heart" type="StaticBody2D"]
+
+[node name="Heart" type="Sprite" parent="."]
+position = Vector2( 1, -1 )
+scale = Vector2( 2.5, 2.66667 )
+texture = ExtResource( 1 )
