@@ -13,13 +13,16 @@ enum{
 	ATTACK
 }
 var state = MOVE
+var roll_vector =  Vector2.ZERO
 
 onready var animationplayer = $AnimationPlayer
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback")
+onready var swordhitbox = $SwordHitBox/HitBox
 
 func _ready():
 	animationtree.active = true
+	swordhitbox.knockback_vector = roll_vector
 
 func _physics_process(delta):
 	match state:
@@ -35,6 +38,7 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		swordhitbox.knockback_vector = input_vector
 		animationtree.set("parameters/Idle/blend_position", input_vector)
 		animationtree.set("parameters/Run/blend_position", input_vector)
 		animationtree.set("parameters/Attack/blend_position", input_vector)
