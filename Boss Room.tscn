@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Ritual_Circle.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://World/Tree2_WBerries.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/LargeStump.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/Tree1_WBerries.tscn" type="PackedScene" id=19]
-[ext_resource path="res://World/Long_Log.tscn" type="PackedScene" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Dark-grass-tileset.png 0"
@@ -100,10 +99,8 @@
 scale = Vector2( 0.99974, 0.995443 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 68.0177, -2.00916, 0, 0, 1.00026, 181.829, 128.033, 184.842, 26.0068, 119.545, 24.0062, 37.1694, 69.0179, 10.0458, 274.071, 10.0458, 290.075, 93.4257, 287.075, 149.682, 193.05, 183.838, 320.083, 180.824, 319.083, 1.00458 )
 
 [node name="Background" type="Sprite" parent="."]
@@ -162,20 +159,6 @@ position = Vector2( 248, 62 )
 
 [node name="LargeStump4" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 253.066, 117.536 )
-scale = Vector2( 1, 1 )
-
-[node name="Long_Log" parent="YSort" instance=ExtResource( 21 )]
-position = Vector2( 62.5209, 63.0195 )
-rotation = 0.872665
-scale = Vector2( 1, 1 )
-
-[node name="LongLog" parent="YSort/Long_Log" index="0"]
-rotation = 1.5708
-flip_h = true
-
-[node name="CollisionShape2D" parent="YSort/Long_Log" index="1"]
-position = Vector2( 1.00024, -1.00458 )
-rotation = 0.0
 
 [node name="Big_Rock2" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 48.0125, 99.4532 )
@@ -189,18 +172,19 @@ position = Vector2( 303, -13 )
 [node name="Strange Pillar" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 111.029, 47.2151 )
 
+[node name="Player" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 66.0172, 102.467 )
+scale = Vector2( 1, 1 )
+
 [node name="Broken well" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 62.0161, 31.1419 )
+scale = Vector2( 1, 1 )
 
 [node name="Tree5" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 19.0049, 127.581 )
 
 [node name="LargeStump2" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 53.0138, 50.2289 )
-scale = Vector2( 1, 1 )
-
-[node name="Tree4" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 18.0047, 32.1465 )
 
 [node name="Tree3" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 303.079, 135.618 )
@@ -225,30 +209,21 @@ position = Vector2( 135.035, 23.1053 )
 
 [node name="AnotherTree4" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 298.077, 22.1007 )
-scale = Vector2( 1, 1 )
 
 [node name="AnotherTree3" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 269.07, 142.65 )
-scale = Vector2( 1, 1 )
 
 [node name="AnotherTree2" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 23.006, 155.71 )
-scale = Vector2( 1, 1 )
 
 [node name="AnotherTree1" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 86.0224, -7.03204 )
-scale = Vector2( 1, 1 )
 
 [node name="LargeStump" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 226.059, 8.03662 )
-scale = Vector2( 1, 1 )
 
 [node name="Bush" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 268.07, 76.3479 )
-scale = Vector2( 1, 1 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 117, 75 )
 
 [node name="TallBush" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 239.062, 14.0641 )
@@ -268,5 +243,8 @@ position = Vector2( 296.077, 79.3616 )
 [node name="LargeStump3" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 19.0049, 75.3433 )
 
-[editable path="YSort/Long_Log"]
+[node name="Tree4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 18.0047, 32.1465 )
+scale = Vector2( 1, 1 )
+
 [editable path="YSort/Ritual_Circle"]
