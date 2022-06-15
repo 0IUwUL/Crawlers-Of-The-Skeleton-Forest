@@ -16,6 +16,7 @@
 position = Vector2( 56, 32 )
 
 [node name="Slimes" type="YSort" parent="YSort"]
+visible = false
 
 [node name="Slime" parent="YSort/Slimes" instance=ExtResource( 19 )]
 position = Vector2( 139, 37 )
@@ -24,6 +25,7 @@ position = Vector2( 139, 37 )
 position = Vector2( 139, 43 )
 
 [node name="Lancer" type="YSort" parent="YSort"]
+visible = false
 
 [node name="Lancer2" parent="YSort/Lancer" instance=ExtResource( 4 )]
 position = Vector2( 139, 76 )
@@ -35,13 +37,17 @@ position = Vector2( 139, 70 )
 position = Vector2( 140, 17 )
 
 [node name="Skeleton_Shield" parent="YSort/Skeletons" instance=ExtResource( 2 )]
+visible = false
 
 [node name="Skeleton_Shield2" parent="YSort/Skeletons" instance=ExtResource( 2 )]
+visible = false
 
 [node name="Skeleton" parent="YSort/Skeletons" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -1, 90 )
 
 [node name="Skeleton2" parent="YSort/Skeletons" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -1, 95 )
 
 [node name="Berserker" parent="YSort/Skeletons" instance=ExtResource( 3 )]
@@ -51,7 +57,9 @@ position = Vector2( 1, 117 )
 position = Vector2( 1, 121 )
 
 [node name="Saber" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 140, 161 )
 
 [node name="Saber2" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 140, 167 )

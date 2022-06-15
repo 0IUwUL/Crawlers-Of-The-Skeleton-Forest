@@ -3,6 +3,9 @@ extends Node
 export var max_health = 1
 export var damage = 1
 export var Speed = 1
+export var Velocity = 1
+export var Friction = 1
+export var Acceleration = 1
 onready var health = max_health setget set_health
 
 signal no_health

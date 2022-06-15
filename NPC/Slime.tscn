@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/NPC/slime.png" type="Texture" id=1]
 [ext_resource path="res://NPC/Slime.gd" type="Script" id=2]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPC/PlayerDetection.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 1 )
@@ -115,6 +116,9 @@ height = 12.0001
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 8, 3.5 )
 
+[sub_resource type="CircleShape2D" id=73]
+radius = 67.0298
+
 [node name="Slime" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 2 )
@@ -142,8 +146,19 @@ shape = SubResource( 46 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 2
+Speed = 50
+Velocity = 30
+Friction = 500
+Acceleration = 200
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+modulate = Color( 1, 1, 1, 0.345098 )
+shape = SubResource( 73 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
+[editable path="PlayerDetection"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/NPC/Skeleton_Berserker.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NPC/Berserker.gd" type="Script" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPC/PlayerDetection.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -147,6 +148,9 @@ height = 8.0
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 8, 8.5 )
 
+[sub_resource type="CircleShape2D" id=32]
+radius = 94.0053
+
 [node name="Berserker" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 3 )
@@ -155,7 +159,6 @@ script = ExtResource( 3 )
 position = Vector2( 0, -12 )
 frames = SubResource( 12 )
 animation = "Idle"
-frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -173,8 +176,18 @@ shape = SubResource( 31 )
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 9
 damage = 2
+Speed = 150
+Velocity = 100
+Friction = 80
+Acceleration = 400
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+shape = SubResource( 32 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
+[editable path="PlayerDetection"]
