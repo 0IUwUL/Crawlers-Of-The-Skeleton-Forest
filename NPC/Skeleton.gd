@@ -31,3 +31,7 @@ func _ready():
 #		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 ##	
 #	velocity = move_and_slide(velocity)
+
+
+func _on_Hurtbox_area_entered(area):
+	queue_free()

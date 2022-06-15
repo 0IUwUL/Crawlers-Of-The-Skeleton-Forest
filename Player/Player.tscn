@@ -63,7 +63,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -9, 2 ) ]
+"values": [ Vector2( -9, 7 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("SwordHitBox/HitBox/CollisionShape2D:rotation_degrees")
@@ -189,7 +189,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -13, 6 ) ]
+"values": [ Vector2( -9, 6 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("SwordHitBox/HitBox/CollisionShape2D:rotation_degrees")
@@ -657,14 +657,16 @@ graph_offset = Vector2( -45.0381, 113.678 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
+flip_h = true
 hframes = 6
 vframes = 5
-frame = 11
+frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 6 )
@@ -692,13 +694,14 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( -0.471338, 0.241379 )
 
 [node name="SwordHitBox" type="Position2D" parent="."]
+rotation = 1.5708
 
 [node name="HitBox" parent="SwordHitBox" instance=ExtResource( 3 )]
 position = Vector2( 16, -9.53674e-07 )
+collision_mask = 8
 
 [node name="CollisionShape2D" parent="SwordHitBox/HitBox" index="0"]
-position = Vector2( -13, 6 )
-rotation = -1.5708
+position = Vector2( -9, 7 )
 shape = SubResource( 59 )
 disabled = true
 
