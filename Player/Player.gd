@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO
+export var velocity = Vector2.ZERO
 #helps the movement to be faster than the frames
-const MAX_SPEED = 100
+export var MAX_SPEED = 100
 #adds boost when moving for a long time
-const ACCELARATION = 200
+export var ACCELARATION = 200
 #slide on stop
-const FRICTION = 50
+export var FRICTION = 50
 
 enum{
 	MOVE,

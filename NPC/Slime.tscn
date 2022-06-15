@@ -1,8 +1,25 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/NPC/slime.png" type="Texture" id=1]
 [ext_resource path="res://NPC/Slime.gd" type="Script" id=2]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 1 )
@@ -56,22 +73,6 @@ region = Rect2( 160, 64, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 192, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 128, 32, 32 )
@@ -106,6 +107,11 @@ region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=51]
 animations = [ {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
 "loop": true,
 "name": "Run",
@@ -114,11 +120,6 @@ animations = [ {
 "frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "Attack",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
@@ -149,6 +150,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 51 )
 animation = "Idle"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -163,6 +165,10 @@ collision_layer = 8
 position = Vector2( 0, 1.5 )
 shape = SubResource( 46 )
 
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 5
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
