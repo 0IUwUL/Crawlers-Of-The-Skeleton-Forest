@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Earth-tileset.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://World/Sign.tscn" type="PackedScene" id=11]
 [ext_resource path="res://NPC/Lancer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://NPC/Berserker.tscn" type="PackedScene" id=13]
+[ext_resource path="res://NPC/Skeleton_Shield.tscn" type="PackedScene" id=14]
+[ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 14.8611, 4.05025, 16.8082, 2.72618, 47.4176, 2.88195, 50.0658, 6.6205, 50.2215, 9.26865, 47.7292, 12.2283, 42.2771, 12.0726, 40.33, 13.2409, 15.2505, 13.0072, 11.0446, 13.163, 9.72055, 12.3841, 8.94169, 11.1379, 8.78592, 7.71091, 10.9667, 4.36179 )
@@ -1340,19 +1342,8 @@ tile_data = PoolIntArray( 15, 0, 0, 65551, 2, 0, 196623, 1, 0, 262159, 0, 0, 458
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Lancer" type="YSort" parent="YSort"]
-
-[node name="Lancer2" parent="YSort/Lancer" instance=ExtResource( 12 )]
-position = Vector2( 288, 144 )
-
-[node name="Lancer" parent="YSort/Lancer" instance=ExtResource( 12 )]
-position = Vector2( 224, 96 )
-
 [node name="Berserker" parent="YSort" instance=ExtResource( 13 )]
-position = Vector2( 224, 144 )
-
-[node name="Berserker2" parent="YSort" instance=ExtResource( 13 )]
-position = Vector2( 288, 96 )
+position = Vector2( 428, 234 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 16, 240 )
@@ -1386,6 +1377,24 @@ position = Vector2( 464, 176 )
 
 [node name="Yellow_Tree9" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 464, 232 )
+
+[node name="Skeleton_Shield" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 68, 108 )
+
+[node name="Skeleton4" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 185, 252 )
+
+[node name="Skeleton2" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 412, 79 )
+
+[node name="Skeleton3" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 320, 249 )
+
+[node name="Skeleton" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 55, 188 )
+
+[node name="Lancer2" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 266, 118 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
