@@ -56,7 +56,7 @@ func move_state(delta):
 	if Input.is_action_just_pressed("Attack"):
 		state=ATTACK
 
-func attack_state(delta):
+func attack_state(_delta):
 	velocity = Vector2.ZERO
 	animationstate.travel("Attack")
 	
@@ -65,6 +65,6 @@ func attack_animation_done():
 
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= 1
+	stats.health -= area.damage
 	hurtbox.start_invinc(0.5)
 	hurtbox.create_hit_effect()

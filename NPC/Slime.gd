@@ -6,10 +6,10 @@ var knockback = Vector2.ZERO
 
 onready var stats = $Stats
 onready var playerDetection = $PlayerDetection
-onready var sprite = $AnimatedSprite
 onready var hurtbox = $Hurtbox
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback") 
+onready var hitbox = $HitBox
 
 enum {
 	IDLE,
@@ -23,6 +23,7 @@ var state = CHASE
 
 func _ready():
 	animationtree.active = true
+	hitbox.damage = stats.damage
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, stats.Friction*delta)
@@ -74,5 +75,5 @@ func _on_Stats_no_health():
 	get_parent().add_child(slimeDeath)
 	slimeDeath.global_position = global_position
 
-func _on_EnemyAttackAnimate_body_entered(body):
+func _on_EnemyAttackAnimate_body_entered(_body):
 	state = ATTACK
