@@ -6,16 +6,24 @@ const DeathEffect = preload("res://Effects/SkeletonWShield.tscn")
 
 onready var stats = $Stats
 onready var playerDetection = $PlayerDetection
-onready var sprite = $AnimatedSprite
+onready var hurtbox = $Hurtbox
+onready var animationtree = $AnimationTree
+onready var animationstate = animationtree.get("parameters/playback") 
+onready var hitbox = $Position2D/HitBox
 
 enum {
 	IDLE,
 	WANDER,
-	CHASE
+	CHASE,
+	ATTACK
 }
 
 var velocity = Vector2.ZERO
 var state = CHASE
+
+func _ready():
+	animationtree.active = true
+	hitbox.damage = stats.damage
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, stats.Acceleration*delta)
@@ -25,17 +33,23 @@ func _physics_process(delta):
 		IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, stats.Velocity*delta)
 			seek_player()
+			animationstate.travel("Idle")
 		WANDER:
 			pass
 		CHASE:
+			animationstate.travel("Run")
 			var player = playerDetection.player
 			if player != null:
 				var direction = (player.global_position - global_position).normalized()
+				animationtree.set("parameters/Run/blend_position", direction)
+				animationtree.set("parameters/Idle/blend_position", direction)
+				animationtree.set("parameters/Attack/blend_position", direction)
+				animationtree.set("parameters/Damage/blend_position", direction)
 				velocity = velocity.move_toward(direction * stats.Velocity, stats.Speed * delta)
 			else:
 				state = IDLE
-			
-			sprite.flip_h = velocity.x<0
+		ATTACK:
+			animationstate.travel("Attack")
 	velocity = move_and_slide(velocity)
 		
 func seek_player():
@@ -43,11 +57,23 @@ func seek_player():
 		state = CHASE
 	
 func _on_Hurtbox_area_entered(area):
+	animationstate.travel("Damage")
 	stats.health -= area.damage
-	knockback = area.knockback_vector * stats.Friction
+	knockback = area.knockback_vector * 125
+	hurtbox.create_hit_effect()
+	
+func attack_Done():
+	var player = playerDetection.player
+	if player != null:
+		state = CHASE
+	else:
+		state = IDLE
 
 func _on_Stats_no_health():
 	queue_free()
 	var skeletonWShieldDeath = DeathEffect.instance()
 	get_parent().add_child(skeletonWShieldDeath)
 	skeletonWShieldDeath.global_position = global_position
+
+func _on_EnemyAttackAnimate_body_entered(_body):
+	state = ATTACK

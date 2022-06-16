@@ -515,7 +515,6 @@ position = Vector2( 0, -1 )
 texture = ExtResource( 1 )
 hframes = 7
 vframes = 5
-frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
@@ -549,7 +548,6 @@ position = Vector2( 0, 2 )
 shape = SubResource( 74 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-reset_on_save = false
 anims/Attack_Left = SubResource( 81 )
 anims/Attack_Right = SubResource( 80 )
 anims/Damage_Left = SubResource( 119 )
