@@ -425,6 +425,7 @@ blend_point_6/node = SubResource( 61 )
 blend_point_6/pos = Vector2( -0.1, 0.9 )
 blend_point_7/node = SubResource( 62 )
 blend_point_7/pos = Vector2( -0.1, -0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=44]
 animation = "Idle_Right"
@@ -467,6 +468,7 @@ blend_point_6/node = SubResource( 50 )
 blend_point_6/pos = Vector2( -0.1, 0.9 )
 blend_point_7/node = SubResource( 51 )
 blend_point_7/pos = Vector2( -0.1, -0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=64]
 animation = "Run_Right"
@@ -509,6 +511,7 @@ blend_point_6/node = SubResource( 70 )
 blend_point_6/pos = Vector2( -0.1, -0.9 )
 blend_point_7/node = SubResource( 71 )
 blend_point_7/pos = Vector2( -0.1, 0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=73]
 
@@ -527,6 +530,7 @@ states/Run/node = SubResource( 72 )
 states/Run/position = Vector2( 506, 104 )
 transitions = [ "Idle", "Run", SubResource( 73 ), "Run", "Idle", SubResource( 74 ), "Idle", "Attack", SubResource( 75 ), "Attack", "Idle", SubResource( 76 ) ]
 start_node = "Idle"
+graph_offset = Vector2( -203.776, 59.5458 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=54]
 

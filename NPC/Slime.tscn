@@ -349,6 +349,7 @@ blend_point_6/node = SubResource( 135 )
 blend_point_6/pos = Vector2( -0.1, 0.9 )
 blend_point_7/node = SubResource( 136 )
 blend_point_7/pos = Vector2( -0.1, -0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=120]
 animation = "Damage_Right"
@@ -391,6 +392,7 @@ blend_point_6/node = SubResource( 126 )
 blend_point_6/pos = Vector2( -0.1, -0.9 )
 blend_point_7/node = SubResource( 127 )
 blend_point_7/pos = Vector2( -0.1, 0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=82]
 animation = "Idle"
@@ -433,6 +435,7 @@ blend_point_6/node = SubResource( 88 )
 blend_point_6/pos = Vector2( -0.1, 0.9 )
 blend_point_7/node = SubResource( 89 )
 blend_point_7/pos = Vector2( -0.1, -0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=93]
 animation = "Run_Right"
@@ -475,6 +478,7 @@ blend_point_6/node = SubResource( 99 )
 blend_point_6/pos = Vector2( -0.1, 0.9 )
 blend_point_7/node = SubResource( 100 )
 blend_point_7/pos = Vector2( -0.1, -0.9 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=102]
 
