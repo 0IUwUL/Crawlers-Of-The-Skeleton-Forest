@@ -23,7 +23,7 @@ radius = 8.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id=66]
-radius = 21.2132
+radius = 35.0143
 
 [sub_resource type="Animation" id=36]
 resource_name = "Attack_Left"
