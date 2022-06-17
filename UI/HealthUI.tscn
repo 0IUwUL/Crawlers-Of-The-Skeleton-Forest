@@ -5,8 +5,10 @@
 [ext_resource path="res://UI/HeatFull.png" type="Texture" id=3]
 
 [node name="HealthUI" type="Control"]
-margin_right = 147.0
-margin_bottom = 20.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 25.0
 script = ExtResource( 1 )
 
 [node name="HeartEmpty" type="TextureRect" parent="."]

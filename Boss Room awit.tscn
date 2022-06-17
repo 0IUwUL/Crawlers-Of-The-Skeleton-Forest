@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Trees/Long_Log.tscn" type="PackedScene" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Earth-tileset.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-vertical.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-horizontal.png" type="Texture" id=24]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=25]
+[ext_resource path="res://NPC/Berserker.tscn" type="PackedScene" id=26]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Pattern_1"
@@ -1006,6 +1008,13 @@
 
 [node name="Boss Room awit" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 241, 114 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+process_mode = 0
+smoothing_enabled = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -1033,10 +1042,17 @@ cell_quadrant_size = 8
 format = 1
 tile_data = PoolIntArray( 0, 20, 0, 8, 20, 0, 16, 20, 0, 24, 24, 0, 32, 24, 0, 35, 25, 0, 42, 0, 0, 50, 1, 0, 57, 1, 0, 65, 1, 0, 73, 2, 0, 80, 25, 0, 88, 25, 0, 96, 22, 0, 104, 22, 0, 112, 22, 0, 262186, 6, 0, 262191, 41, 0, 262217, 34, 0, 262223, 7, 0, 393266, 46, 0, 393288, 46, 0, 524288, 25, 0, 524296, 23, 0, 524304, 23, 0, 524312, 26, 0, 524320, 26, 0, 524322, 26, 0, 524346, 46, 0, 524351, 46, 0, 524368, 22, 0, 524376, 22, 0, 524384, 24, 0, 524392, 24, 0, 524400, 24, 0, 655395, 36, 0, 852050, 36, 0, 917531, 36, 0, 917541, 46, 0, 983144, 46, 0, 1048576, 23, 0, 1048578, 23, 0, 1048586, 25, 0, 1048594, 24, 0, 1048602, 23, 0, 1048610, 24, 0, 1048618, 5, 0, 1048625, 41, 0, 1048627, 46, 0, 1048647, 46, 0, 1048648, 42, 0, 1048649, 3, 0, 1048657, 24, 0, 1048659, 46, 0, 1048665, 24, 0, 1048673, 23, 0, 1048681, 23, 0, 1048688, 23, 0, 1114142, 46, 0, 1114216, 38, 0, 1245234, 11, 0, 1245253, 17, 0, 1441835, 35, 0, 1441880, 36, 0, 1507353, 35, 0, 1507401, 24, 0, 1507408, 24, 0, 1572864, 25, 0, 1572872, 25, 0, 1572880, 26, 0, 1572888, 23, 0, 1572896, 23, 0, 1572904, 22, 0, 1572906, 24, 0, 1572914, 12, 0, 1572933, 18, 0, 1572952, 23, 0, 1572960, 23, 0, 1572968, 25, 0, 1572976, 25, 0, 1638445, 46, 0, 1638490, 46, 0, 2031689, 23, 0, 2031697, 23, 0, 2097152, 22, 0, 2097160, 22, 0, 2097168, 24, 0, 2097169, 24, 0, 2097177, 24, 0, 2097185, 23, 0, 2097193, 23, 0, 2097194, 23, 0, 2097202, 12, 0, 2097221, 18, 0, 2097241, 24, 0, 2097249, 24, 0, 2097257, 25, 0, 2097264, 25, 0, 2162769, 39, 0, 2228245, 37, 0, 2293839, 46, 0, 2490392, 46, 0, 2490403, 35, 0, 2555977, 23, 0, 2555985, 23, 0, 2555997, 46, 0, 2556000, 38, 0, 2621440, 25, 0, 2621448, 25, 0, 2621456, 22, 0, 2621464, 22, 0, 2621472, 25, 0, 2621480, 25, 0, 2621482, 25, 0, 2621490, 12, 0, 2621509, 18, 0, 2621513, 23, 0, 2621521, 23, 0, 2621529, 24, 0, 2621536, 24, 0, 2621544, 23, 0, 2621552, 23, 0, 2949142, 37, 0, 2949167, 46, 0, 3014763, 46, 0, 3080238, 37, 0, 3145728, 23, 0, 3145736, 23, 0, 3145744, 24, 0, 3145752, 24, 0, 3145760, 22, 0, 3145768, 22, 0, 3145770, 22, 0, 3145778, 12, 0, 3145797, 18, 0, 3145801, 24, 0, 3145804, 46, 0, 3145809, 25, 0, 3145817, 23, 0, 3145825, 23, 0, 3145833, 26, 0, 3145835, 38, 0, 3145840, 26, 0, 3211353, 38, 0, 3211358, 46, 0, 3276876, 39, 0, 3538989, 46, 0, 3538991, 37, 0, 3604561, 23, 0, 3604592, 23, 0, 3670016, 24, 0, 3670024, 24, 0, 3670032, 23, 0, 3670040, 23, 0, 3670048, 25, 0, 3670056, 25, 0, 3670059, 25, 0, 3670066, 12, 0, 3670085, 18, 0, 3670089, 23, 0, 3670105, 24, 0, 3670113, 24, 0, 3670121, 23, 0, 3932160, 24, 0, 3932168, 24, 0, 3932176, 23, 0, 3932184, 23, 0, 3932192, 25, 0, 3932200, 25, 0, 3932202, 25, 0, 3932210, 12, 0, 3932229, 18, 0, 3932233, 23, 0, 3932241, 23, 0, 3932249, 24, 0, 3932257, 24, 0, 3932265, 23, 0, 3932272, 23, 0 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 25 )]
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 241, 114 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="AnotherTree1" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 64, 22 )
@@ -1187,5 +1203,8 @@ position = Vector2( 246, 57 )
 
 [node name="Sprite" parent="YSort/Ritual_Circle" index="0"]
 z_index = 0
+
+[node name="Berserker" parent="." instance=ExtResource( 26 )]
+position = Vector2( 155, 145 )
 
 [editable path="YSort/Ritual_Circle"]
