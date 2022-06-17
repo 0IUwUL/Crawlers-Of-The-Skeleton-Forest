@@ -1,70 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NPC/Skeleton_Shield.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPC/Saber.tscn" type="PackedScene" id=5]
+[ext_resource path="res://NPC/Berserker.tscn" type="PackedScene" id=6]
+[ext_resource path="res://NPC/Lancer.tscn" type="PackedScene" id=7]
 
 [node name="World" type="YSort"]
 
 [node name="YSort" type="YSort" parent="."]
+
+[node name="Slime2" parent="YSort" instance=ExtResource( 2 )]
+
+[node name="Slime" parent="YSort" instance=ExtResource( 2 )]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
 
 [node name="Slimes" type="YSort" parent="YSort"]
 
-[node name="Slime" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 64, 110 )
-
-[node name="Slime3" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 64, 110 )
-
-[node name="Slime4" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 86, 98 )
-
-[node name="Slime5" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 109, 126 )
-
-[node name="Slime6" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 119, 86 )
-
-[node name="Slime7" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 119, 86 )
-
-[node name="Slime2" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 207, 105 )
-
-[node name="Slime8" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 207, 63 )
-
-[node name="Slime9" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 168, 88 )
-
-[node name="Slime10" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 169, 55 )
-
-[node name="Slime11" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 126, 152 )
-
-[node name="Slime12" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 166, 136 )
-
-[node name="Slime13" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 141, 108 )
-
-[node name="Slime14" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 181, 115 )
-
-[node name="Slime15" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 131, 62 )
-
-[node name="Slime16" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 77, 145 )
-
 [node name="Lancer" type="YSort" parent="YSort"]
+
+[node name="Lancer" parent="YSort/Lancer" instance=ExtResource( 7 )]
+position = Vector2( 133, 155 )
+
+[node name="Lancer7" parent="YSort/Lancer" instance=ExtResource( 7 )]
+position = Vector2( 277, 128 )
 
 [node name="Skeletons" type="YSort" parent="YSort"]
 position = Vector2( 140, 17 )
+
+[node name="Skeleton_Shield" parent="YSort/Skeletons" instance=ExtResource( 3 )]
+
+[node name="Skeleton_Shield2" parent="YSort/Skeletons" instance=ExtResource( 3 )]
+
+[node name="Saber" parent="YSort/Skeletons" instance=ExtResource( 5 )]
+
+[node name="Saber2" parent="YSort/Skeletons" instance=ExtResource( 5 )]
+
+[node name="Berserker" parent="YSort/Skeletons" instance=ExtResource( 6 )]
+position = Vector2( -140, -17 )
+
+[node name="Berserker2" parent="YSort/Skeletons" instance=ExtResource( 6 )]
 
 [node name="HealthUI" parent="." instance=ExtResource( 4 )]
 margin_left = 8.0

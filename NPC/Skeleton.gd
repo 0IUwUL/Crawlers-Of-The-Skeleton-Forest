@@ -10,6 +10,7 @@ onready var hurtbox = $Hurtbox
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback") 
 onready var hitbox = $Position2D/HitBox
+onready var softCollision = $SoftCollision
 
 enum {
 	IDLE,
@@ -50,6 +51,9 @@ func _physics_process(delta):
 				state = IDLE
 		ATTACK:
 			animationstate.travel("Attack")
+	if (softCollision.is_colliding()):
+		velocity += softCollision.get_push_vector() * delta * 200
+		
 	velocity = move_and_slide(velocity)
 		
 func seek_player():

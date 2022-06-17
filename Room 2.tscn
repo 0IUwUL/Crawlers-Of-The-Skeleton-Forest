@@ -1411,7 +1411,6 @@ position = Vector2( 55, 188 )
 position = Vector2( 266, 118 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="Walls2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 480, 0, 480, 64, 272, 64, 272, 16, 240, 16, 240, 64, 0, 64 )

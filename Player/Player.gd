@@ -21,6 +21,7 @@ onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback")
 onready var swordhitbox = $SwordHitBox/HitBox
 onready var hurtbox = $Hurtbox
+onready var softCollision = $SoftCollision
 
 func _ready():
 	stats.connect("no_health", self, "queue_free")
@@ -51,6 +52,8 @@ func move_state(delta):
 		animationstate.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 #	
+	if (softCollision.is_colliding()):
+		velocity += softCollision.get_push_vector() * delta * 100
 	velocity = move_and_slide(velocity)
 	
 	if Input.is_action_just_pressed("Attack"):
