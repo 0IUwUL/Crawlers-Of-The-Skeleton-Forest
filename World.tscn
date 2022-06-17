@@ -12,14 +12,14 @@
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Slime2" parent="YSort" instance=ExtResource( 2 )]
-
-[node name="Slime" parent="YSort" instance=ExtResource( 2 )]
-
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
 
 [node name="Slimes" type="YSort" parent="YSort"]
+
+[node name="Slime2" parent="YSort/Slimes" instance=ExtResource( 2 )]
+
+[node name="Slime" parent="YSort/Slimes" instance=ExtResource( 2 )]
 
 [node name="Lancer" type="YSort" parent="YSort"]
 
