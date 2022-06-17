@@ -544,6 +544,7 @@ Friction = 500
 Acceleration = 200
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 modulate = Color( 1, 1, 1, 0.345098 )
@@ -586,8 +587,7 @@ collision_mask = 2
 shape = SubResource( 128 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
-collision_layer = 32
-collision_mask = 32
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 137 )
