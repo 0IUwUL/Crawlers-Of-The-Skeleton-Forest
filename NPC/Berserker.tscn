@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/NPC/Skeleton_Berserker.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Hitboxes_Hurtbox/HitBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Effects/EnemyAttackAnimate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Effects/SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Effects/WandererNode.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 4.0
@@ -17,7 +18,7 @@ height = 8.0
 extents = Vector2( 8, 8.5 )
 
 [sub_resource type="CircleShape2D" id=32]
-radius = 244.461
+radius = 69.0072
 
 [sub_resource type="CapsuleShape2D" id=35]
 radius = 8.0
@@ -506,13 +507,12 @@ shape = SubResource( 31 )
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 9
 damage = 2
-Speed = 150
-Velocity = 100
+Speed = 75
+Velocity = 50
 Friction = 80
-Acceleration = 400
+Acceleration = 125
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 shape = SubResource( 32 )
@@ -521,7 +521,6 @@ shape = SubResource( 32 )
 position = Vector2( 0, -7 )
 
 [node name="HitBox" parent="Position2D" instance=ExtResource( 6 )]
-visible = false
 position = Vector2( 6, 0 )
 collision_mask = 4
 
@@ -531,6 +530,7 @@ shape = SubResource( 35 )
 disabled = true
 
 [node name="EnemyAttackAnimate" parent="." instance=ExtResource( 7 )]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -556,12 +556,13 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
-collision_layer = 32
-collision_mask = 32
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( -1, -2 )
 shape = SubResource( 110 )
+
+[node name="WandererNode" parent="." instance=ExtResource( 9 )]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

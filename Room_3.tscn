@@ -887,7 +887,6 @@ format = 1
 tile_data = PoolIntArray( -65556, 6, 0, 1114109, 5, 0, 1114110, 5, 0, 1048612, -1610612731, 0, 1179644, 5, 0, 1179646, 9, 0, 1114145, 9, 0, 1179685, -1073741819, 0, 1179687, 5, 0, 1310715, -1610612729, 0, 1310717, -1073741819, 0, 1376251, 5, 0, 1310756, -1610612731, 0, 1310759, 5, 0, 1441830, -1073741817, 0, 1441835, 5, 0, 1572858, 5, 0, 1572863, 5, 0, 1507365, 7, 0, 1572866, 5, 0, 1572898, 5, 0, 1572903, 5, 0, 1703912, 7, 0, 1703933, 5, 0, 1835002, 5, 0, 1835041, 5, 0, 2752492, 7, 0, 2883559, 7, 0 )
 
 [node name="Bushes" type="TileMap" parent="."]
-z_index = 1
 tile_set = SubResource( 26 )
 cell_size = Vector2( 4, 4 )
 format = 1
@@ -898,13 +897,13 @@ rotation = -0.383972
 tile_set = SubResource( 28 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131073, 0, 0, 655381, 0, 0, 1245197, 0, 0, 1703970, 0, 0, 2621451, 0, 0, 2818070, 0, 0 )
+tile_data = PoolIntArray( -131071, 0, 0, 458772, 0, 0, 1245197, 0, 0, 1703970, 0, 0, 2621451, 0, 0, 2818070, 0, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 2
-polygon = PoolVector2Array( 0, -2, 0, 270, 241, 270, 242, 255, 4, 256, 5, 47, 476, 45, 477, 256, 241, 255, 241, 270, 480, 270, 479, 0 )
+polygon = PoolVector2Array( 0, -2, 0, 270, 241, 270, 242, 255, 4, 256, 3, 1, 477, 2, 477, 256, 241, 255, 241, 270, 480, 270, 479, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -913,11 +912,6 @@ position = Vector2( 237, 251 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
-
-[node name="Enemies" type="YSort" parent="YSort"]
-
-[node name="Skeleton_Shield" parent="YSort/Enemies" instance=ExtResource( 9 )]
-position = Vector2( 104, 111 )
 
 [node name="Broken well" parent="YSort" instance=ExtResource( 20 )]
 position = Vector2( 354, 147 )
@@ -935,16 +929,21 @@ position = Vector2( 211, 311 )
 [node name="Cross_Thin" parent="YSort" instance=ExtResource( 23 )]
 position = Vector2( 158, 98 )
 
-[node name="Skeleton" parent="." instance=ExtResource( 24 )]
+[node name="Enemies" type="YSort" parent="YSort"]
+
+[node name="Skeleton_Shield" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 104, 111 )
+
+[node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 24 )]
 position = Vector2( 223, 62 )
 
-[node name="Berserker" parent="." instance=ExtResource( 10 )]
+[node name="Skeleton_Shield2" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 367, 101 )
+
+[node name="Berserker" parent="YSort/Enemies" instance=ExtResource( 10 )]
 position = Vector2( 280, 73 )
 
-[node name="Skeleton_Shield" parent="Berserker" instance=ExtResource( 9 )]
-position = Vector2( 87, 28 )
-
-[node name="Skeleton" parent="Berserker/Skeleton_Shield" instance=ExtResource( 24 )]
-position = Vector2( -230, 46 )
+[node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 24 )]
+position = Vector2( 137, 147 )
 
 [editable path="YSort/Broken well"]

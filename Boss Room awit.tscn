@@ -1489,6 +1489,9 @@ max_health = 99999999999
 damage = 99999999999
 Speed = 99999999999
 
+[node name="PlayerDetection" parent="YSort/Enemies/Slime" index="4"]
+visible = false
+
 [node name="AnimationTree" parent="YSort/Enemies/Slime" index="7"]
 parameters/playback = SubResource( 4 )
 

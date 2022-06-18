@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Assets/NPC/skeleton.png" type="Texture" id=1]
 [ext_resource path="res://NPC/Skeleton.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Effects/EnemyAttackAnimate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Hitboxes_Hurtbox/HitBox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Effects/SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Effects/WandererNode.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=80]
 resource_name = "Attack_Left"
@@ -378,8 +379,8 @@ height = 10.0
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 7.5, 8.5 )
 
-[sub_resource type="CircleShape2D" id=73]
-radius = 136.033
+[sub_resource type="CircleShape2D" id=130]
+radius = 36.1248
 
 [sub_resource type="CircleShape2D" id=83]
 radius = 27.0
@@ -609,7 +610,6 @@ rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
-visible = false
 position = Vector2( 0, -5 )
 
 [node name="HitBox" parent="Position2D" instance=ExtResource( 7 )]
@@ -633,17 +633,16 @@ shape = SubResource( 46 )
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 3
 damage = 2
-Speed = 100
-Velocity = 75
+Speed = 70
+Velocity = 50
 Friction = 110
-Acceleration = 300
+Acceleration = 50
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 modulate = Color( 0.933333, 0.941176, 1, 0.301961 )
-shape = SubResource( 73 )
+shape = SubResource( 130 )
 
 [node name="EnemyAttackAnimate" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -668,6 +667,10 @@ visible = false
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 1, -4 )
 shape = SubResource( 129 )
+
+[node name="WandererNode" parent="." instance=ExtResource( 9 )]
+visible = false
+wander = 64
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/NPC/Skeleton_DoubleWield.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes_Hurtbox/Hurtbox.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Hitboxes_Hurtbox/HitBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Effects/EnemyAttackAnimate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Effects/SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Effects/WandererNode.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=15]
 radius = 9.0
@@ -21,7 +22,7 @@ height = 6.0
 extents = Vector2( 8, 8.5 )
 
 [sub_resource type="CircleShape2D" id=14]
-radius = 140.004
+radius = 88.0057
 
 [sub_resource type="Animation" id=18]
 resource_name = "Attack_Left"
@@ -521,10 +522,10 @@ shape = SubResource( 13 )
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 6
 damage = 3
-Speed = 100
-Velocity = 80
+Speed = 90
+Velocity = 75
 Friction = 100
-Acceleration = 300
+Acceleration = 150
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
 
@@ -557,10 +558,13 @@ collision_mask = 2
 shape = SubResource( 56 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, -3 )
 shape = SubResource( 57 )
+
+[node name="WandererNode" parent="." instance=ExtResource( 9 )]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
