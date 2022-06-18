@@ -25,6 +25,7 @@ var velocity = Vector2.ZERO
 var state = CHASE
 
 func _ready():
+	randomize() 
 	animationtree.active = true
 	hitbox.damage = stats.damage
 	state = pick_rand_new_state([IDLE, WANDER])

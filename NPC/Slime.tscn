@@ -18,7 +18,7 @@ height = 12.0001
 extents = Vector2( 8, 5 )
 
 [sub_resource type="CircleShape2D" id=73]
-radius = 45.2769
+radius = 18.1108
 
 [sub_resource type="CircleShape2D" id=74]
 radius = 8.06226
@@ -595,6 +595,8 @@ shape = SubResource( 137 )
 
 [node name="WandererNode" parent="." instance=ExtResource( 9 )]
 wander = 64
+
+[node name="HitEffect" type="AnimationPlayer" parent="."]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

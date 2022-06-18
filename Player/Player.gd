@@ -16,6 +16,8 @@ var state = MOVE
 var roll_vector =  Vector2.ZERO
 var stats = PlayerStats
 
+const DeathEffect = preload("res://Effects/CharacterDead.tscn")
+
 onready var animationplayer = $AnimationPlayer
 onready var animationtree = $AnimationTree
 onready var animationstate = animationtree.get("parameters/playback")
@@ -23,7 +25,7 @@ onready var swordhitbox = $SwordHitBox/HitBox
 onready var hurtbox = $Hurtbox
 
 func _ready():
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health", self, "_on_PlayerStats_no_health")
 	animationtree.active = true
 	swordhitbox.knockback_vector = roll_vector
 
@@ -68,3 +70,9 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	hurtbox.start_invinc(0.5)
 	hurtbox.create_hit_effect()
+	
+func _on_PlayerStats_no_health():
+	queue_free()
+	var playerDeath = DeathEffect.instance()
+	get_parent().add_child(playerDeath)
+	playerDeath.global_position = global_position
