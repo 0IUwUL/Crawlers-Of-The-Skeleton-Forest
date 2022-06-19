@@ -18,7 +18,8 @@ enum {
 	IDLE,
 	WANDER,
 	CHASE,
-	ATTACK
+	ATTACK,
+	DAMAGE
 }
 
 var velocity = Vector2.ZERO
@@ -60,7 +61,10 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 		ATTACK:
+			velocity = Vector2.ZERO
 			animationstate.travel("Attack")
+		DAMAGE:
+			animationstate.travel("Damage")
 			
 	if (softCollision.is_colliding()):
 		velocity += softCollision.get_push_vector() * delta * 200
@@ -72,8 +76,9 @@ func seek_player():
 	
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 60
+	knockback = area.knockback_vector * 40
 	hurtbox.create_hit_effect()
+	hurtbox.start_invinc(0.7)
 
 func _on_Stats_no_health():
 	queue_free()
@@ -107,3 +112,8 @@ func update_state():
 func pick_rand_new_state(state_list):
 	state_list.shuffle()
 	return state_list.pop_front()
+
+
+func _on_Hurtbox_invin_started():
+	if state != ATTACK:
+		state = DAMAGE

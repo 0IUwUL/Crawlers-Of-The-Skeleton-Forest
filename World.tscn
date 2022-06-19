@@ -19,10 +19,10 @@ position = Vector2( 56, 32 )
 position = Vector2( 140, 17 )
 
 [node name="Saber" parent="YSort/Skeletons" instance=ExtResource( 2 )]
-position = Vector2( 179, 61 )
+position = Vector2( 93, 124 )
 
 [node name="Saber2" parent="YSort/Skeletons" instance=ExtResource( 2 )]
-position = Vector2( 82, 163 )
+position = Vector2( -25, 181 )
 
 [node name="HealthUI" parent="." instance=ExtResource( 4 )]
 margin_left = 8.0

@@ -85,7 +85,7 @@ func attack_Done():
 		
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 100
+	knockback = area.knockback_vector * 30
 	hurtbox.create_hit_effect()
 	hurtbox.start_invinc(0.7)
 
