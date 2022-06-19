@@ -6,6 +6,7 @@ const HitEffect = preload("res://Effects/HitEffect.tscn")
 var invin = false setget set_invin
 
 onready var timer = $Timer
+onready var collision = $CollisionShape2D
 
 signal invin_started
 signal invin_ended
@@ -35,8 +36,8 @@ func _on_Timer_timeout():
 
 
 func _on_Hurtbox_invin_started():
-	set_deferred("monitorable", false)
+	collision.set_deferred("disabled", true)
 
 
 func _on_Hurtbox_invin_ended():
-	set_deferred("monitorable", true)
+	collision.disabled = false
