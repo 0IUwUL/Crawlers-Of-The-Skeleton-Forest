@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NPC/Saber.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
 [node name="World" type="YSort"]
 
@@ -17,28 +13,16 @@ position = Vector2( 56, 32 )
 
 [node name="Slimes" type="YSort" parent="YSort"]
 
-[node name="Slime" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 244, 94 )
-
-[node name="Stats" parent="YSort/Slimes/Slime" index="3"]
-max_health = 10
-
-[node name="AnimationTree" parent="YSort/Slimes/Slime" index="7"]
-parameters/playback = SubResource( 1 )
-
-[node name="Slime2" parent="YSort/Slimes" instance=ExtResource( 2 )]
-position = Vector2( 186, 109 )
-
-[node name="Stats" parent="YSort/Slimes/Slime2" index="3"]
-max_health = 10
-
-[node name="AnimationTree" parent="YSort/Slimes/Slime2" index="7"]
-parameters/playback = SubResource( 3 )
-
 [node name="Lancer" type="YSort" parent="YSort"]
 
 [node name="Skeletons" type="YSort" parent="YSort"]
 position = Vector2( 140, 17 )
+
+[node name="Saber" parent="YSort/Skeletons" instance=ExtResource( 2 )]
+position = Vector2( 179, 61 )
+
+[node name="Saber2" parent="YSort/Skeletons" instance=ExtResource( 2 )]
+position = Vector2( 82, 163 )
 
 [node name="HealthUI" parent="." instance=ExtResource( 4 )]
 margin_left = 8.0
@@ -46,16 +30,4 @@ margin_top = 7.0
 margin_right = 155.0
 margin_bottom = 27.0
 
-[editable path="YSort/Slimes/Slime"]
-[editable path="YSort/Slimes/Slime/Hurtbox"]
-[editable path="YSort/Slimes/Slime/PlayerDetection"]
-[editable path="YSort/Slimes/Slime/HitBox"]
-[editable path="YSort/Slimes/Slime/EnemyAttackAnimate"]
-[editable path="YSort/Slimes/Slime/SoftCollision"]
-[editable path="YSort/Slimes/Slime2"]
-[editable path="YSort/Slimes/Slime2/Hurtbox"]
-[editable path="YSort/Slimes/Slime2/PlayerDetection"]
-[editable path="YSort/Slimes/Slime2/HitBox"]
-[editable path="YSort/Slimes/Slime2/EnemyAttackAnimate"]
-[editable path="YSort/Slimes/Slime2/SoftCollision"]
 [editable path="HealthUI"]

@@ -18,7 +18,8 @@ enum {
 	IDLE,
 	WANDER,
 	CHASE,
-	ATTACK
+	ATTACK,
+	DAMAGE
 }
 
 var velocity = Vector2.ZERO
@@ -60,7 +61,10 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 		ATTACK:
+			velocity = Vector2.ZERO
 			animationstate.travel("Attack")
+		DAMAGE:
+			animationstate.travel("Damage")
 			
 	if (softCollision.is_colliding()):
 		velocity += softCollision.get_push_vector() * delta * 200
@@ -70,35 +74,14 @@ func _physics_process(delta):
 func seek_player():
 	if playerDetection.can_see_player():
 		state = CHASE
-	
-func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
-	knockback = area.knockback_vector * 80
-	hurtbox.create_hit_effect()
-	
-func _on_Stats_no_health():
-	queue_free()
-	var skeletonDeath = DeathEffect.instance()
-	get_parent().add_child(skeletonDeath)
-	skeletonDeath.global_position = global_position
 
-func attack_Done():
-	var player = playerDetection.player
-	if player != null:
-		state = CHASE
-	else:
-		state = IDLE
-
-func _on_EnemyAttackAnimate_body_entered(_body):
-	state = ATTACK
-	
 
 func update_direction(position, delta):
 	animationtree.set("parameters/Run/blend_position", position)
 	animationtree.set("parameters/Idle/blend_position", position)
 	animationtree.set("parameters/Attack/blend_position", position)
+	animationtree.set("parameters/Damage/blend_position", position)
 	velocity = velocity.move_toward(position * stats.Speed, stats.Acceleration * delta)
-
 
 func update_state():
 	state = pick_rand_new_state([IDLE, WANDER])
@@ -107,3 +90,29 @@ func update_state():
 func pick_rand_new_state(state_list):
 	state_list.shuffle()
 	return state_list.pop_front()
+
+func attack_Done():
+	var player = playerDetection.player
+	if player != null:
+		state = CHASE
+	else:
+		state = IDLE
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= area.damage
+	knockback = area.knockback_vector * 50
+	hurtbox.create_hit_effect()
+	hurtbox.start_invinc(0.5)
+	
+func _on_Stats_no_health():
+	queue_free()
+	var skeletonDeath = DeathEffect.instance()
+	get_parent().add_child(skeletonDeath)
+	skeletonDeath.global_position = global_position
+
+func _on_EnemyAttackAnimate_body_entered(_body):
+	state = ATTACK
+
+func _on_Hurtbox_invin_started():
+	if state != ATTACK:
+		state = DAMAGE

@@ -12,6 +12,7 @@
 [ext_resource path="res://Effects/WhiteColor.gdshader" type="Shader" id=10]
 
 [sub_resource type="ShaderMaterial" id=145]
+resource_local_to_scene = true
 shader = ExtResource( 10 )
 shader_param/active = true
 
@@ -67,7 +68,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "attack_Done"
+"method": "state_Done"
 } ]
 }
 tracks/3/type = "value"
@@ -122,7 +123,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "attack_Done"
+"method": "state_Done"
 } ]
 }
 tracks/3/type = "value"
@@ -141,7 +142,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=119]
 resource_name = "Damage_Left"
 length = 0.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:flip_h")
 tracks/0/interp = 1
@@ -178,11 +178,24 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, false, true ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "state_Done"
+} ]
+}
 
 [sub_resource type="Animation" id=113]
 resource_name = "Damage_Right"
 length = 0.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:flip_h")
 tracks/0/interp = 1
@@ -218,6 +231,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "state_Done"
+} ]
 }
 
 [sub_resource type="Animation" id=75]
