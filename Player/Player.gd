@@ -68,7 +68,7 @@ func attack_animation_done():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	hurtbox.start_invinc(0.5)
+	hurtbox.start_invinc(1)
 	hurtbox.create_hit_effect()
 	
 func _on_PlayerStats_no_health():

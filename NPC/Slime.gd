@@ -13,6 +13,8 @@ onready var hitbox = $HitBox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WandererNode
 export var TARGET_DISTANCE = 20
+#onready var blinkAnimation = $AnimationTree2
+#onready var blinkState = blinkAnimation.get("parameters/playback") 
 
 enum {
 	IDLE,
@@ -27,6 +29,7 @@ var state = CHASE
 func _ready():
 	randomize() 
 	animationtree.active = true
+#	blinkAnimation.active = true
 	hitbox.damage = stats.damage
 	state = pick_rand_new_state([IDLE, WANDER])
 
@@ -78,6 +81,7 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	knockback = area.knockback_vector * 125
 	hurtbox.create_hit_effect()
+	hurtbox.start_invinc(1)
 
 func attack_Done():
 	var player = playerDetection.player
@@ -99,8 +103,13 @@ func update_direction(position, delta):
 	animationtree.set("parameters/Run/blend_position", position)
 	animationtree.set("parameters/Idle/blend_position", position)
 	animationtree.set("parameters/Attack/blend_position", position)
+	animationtree.set("parameters/Damage/blend_position", position)
+#	blinkAnimation.set("parameters/Damage/blend_position", position)
 	velocity = velocity.move_toward(position * stats.Speed, stats.Acceleration * delta)
 
 func update_state():
 	state = pick_rand_new_state([IDLE, WANDER])
 	wanderController.reset_timer((rand_range(1,3)))
+
+func _on_Hurtbox_invin_started():
+	animationstate.travel("Damage")
