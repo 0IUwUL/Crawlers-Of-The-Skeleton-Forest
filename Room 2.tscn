@@ -1603,7 +1603,6 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 16, 240 )
-current = true
 zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 
@@ -1737,6 +1736,12 @@ position = Vector2( 412, 79 )
 
 [node name="Skeleton3" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 320, 249 )
+
+[node name="Skeleton" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 176, 158 )
+
+[node name="Skeleton4" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 424, 214 )
 
 [node name="Lancer2" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 266, 118 )

@@ -841,7 +841,6 @@ points = PoolVector2Array( 14.8611, 4.05025, 16.8082, 2.72618, 47.4176, 2.88195,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 237, 251 )
-current = true
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="Jose2" type="TileMap" parent="."]

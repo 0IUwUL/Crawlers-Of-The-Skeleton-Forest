@@ -1508,6 +1508,7 @@ parameters/playback = SubResource( 4 )
 position = Vector2( 267, 93 )
 
 [node name="Skeleton_Shield2" parent="YSort/Enemies" instance=ExtResource( 27 )]
+position = Vector2( 245, 42 )
 
 [node name="Skeleton_Shield" parent="YSort/Enemies" instance=ExtResource( 27 )]
 position = Vector2( 239, 94 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://World/Trees/TallBush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://World/Stone/SmallRock3.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Dark_D.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Items and objects/TX Plant.png" type="Texture" id=28]
+[ext_resource path="res://NPC/Skeleton_Shield.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=5]
 0/name = "Jose.png 0"
@@ -699,7 +700,7 @@ position = Vector2( -52, 210 )
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Big_Rock" parent="YSort" instance=ExtResource( 25 )]
-position = Vector2( 75, 204 )
+position = Vector2( 85, 204 )
 
 [node name="Big_Rock2" parent="YSort" instance=ExtResource( 25 )]
 position = Vector2( 259, 202 )
@@ -823,53 +824,40 @@ texture = ExtResource( 16 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
-[node name="Skeleton11" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 273, 182 )
-
 [node name="Skeleton9" parent="YSort/Enemies" instance=ExtResource( 12 )]
 position = Vector2( -79, 28 )
 
-[node name="Slime2" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 306, 47 )
-
-[node name="Slime" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( -52, 115 )
-scale = Vector2( 0.762921, 0.883371 )
-
 [node name="Slime7" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 216, 206 )
+position = Vector2( 270, 166 )
 scale = Vector2( 0.762921, 0.883371 )
 
 [node name="Slime5" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 345, -14 )
+position = Vector2( -9, 50 )
 scale = Vector2( 0.762921, 0.883371 )
 
 [node name="Skeleton4" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 189, 20 )
-
-[node name="Slime12" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 246, 88 )
-
-[node name="Slime13" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 92, 155 )
+position = Vector2( 207, -8 )
 
 [node name="Slime14" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 273, 118 )
-
-[node name="Slime15" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 16, -4 )
+position = Vector2( 3, 166 )
 
 [node name="Skeleton7" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 353, 29 )
+position = Vector2( 271, 54 )
 
 [node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 145, 104 )
+position = Vector2( 120, 28 )
 
 [node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 83, 17 )
+position = Vector2( 73, -6 )
 
 [node name="Skeleton3" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 23, 101 )
+position = Vector2( 105, 169 )
 
 [node name="Skeleton5" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 235, 71 )
+position = Vector2( 170, -1 )
+
+[node name="Skeleton_Shield" parent="." instance=ExtResource( 29 )]
+position = Vector2( 346, 11 )
+
+[node name="Skeleton" parent="." instance=ExtResource( 12 )]
+position = Vector2( 335, -16 )
