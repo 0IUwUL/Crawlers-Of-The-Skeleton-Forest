@@ -95,7 +95,7 @@ func _on_Stats_no_health():
 	get_parent().add_child(SaberDeath)
 	SaberDeath.global_position = global_position
 
-func _on_EnemyAttackAnimate_body_entered(body):
+func _on_EnemyAttackAnimate_body_entered(_body):
 	state = ATTACK
 
 

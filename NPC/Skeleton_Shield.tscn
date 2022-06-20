@@ -824,7 +824,7 @@ shape = SubResource( 31 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_health = 6
-damage = 2
+damage = 3
 Speed = 50
 Velocity = 75
 Friction = 90
