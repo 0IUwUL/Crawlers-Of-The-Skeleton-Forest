@@ -1,6 +1,6 @@
 extends Node
 
-export var max_health = 12 setget set_max_health
+export var max_health = 13 setget set_max_health
 export var damage = 1
 export var Speed = 1
 export var Velocity = 1
