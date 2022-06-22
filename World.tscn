@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://NPC/Saber.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/SkeletonWShield.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/NPC/Skeleton_DoubleWield.png" type="Texture" id=5]
 
 [node name="World" type="YSort"]
 
@@ -29,5 +31,12 @@ margin_left = 8.0
 margin_top = 7.0
 margin_right = 155.0
 margin_bottom = 27.0
+
+[node name="SkeletonWShield" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162, 195 )
+
+[node name="SkeletonDoubleWield" type="Sprite" parent="."]
+position = Vector2( 145, 145 )
+texture = ExtResource( 5 )
 
 [editable path="HealthUI"]

@@ -848,10 +848,6 @@ position = Vector2( 289, 34 )
 position = Vector2( -52, 115 )
 scale = Vector2( 0.762921, 0.883371 )
 
-[node name="Slime7" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 204, 176 )
-scale = Vector2( 0.762921, 0.883371 )
-
 [node name="Slime5" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 345, -14 )
 scale = Vector2( 0.762921, 0.883371 )
@@ -864,9 +860,6 @@ position = Vector2( 246, 88 )
 
 [node name="Slime13" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 92, 155 )
-
-[node name="Slime14" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 273, 118 )
 
 [node name="Slime15" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 16, -4 )

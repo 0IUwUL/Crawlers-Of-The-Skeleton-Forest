@@ -949,13 +949,13 @@ position = Vector2( 158, 98 )
 position = Vector2( 104, 111 )
 
 [node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 24 )]
-position = Vector2( 223, 62 )
+position = Vector2( 80, 212 )
 
 [node name="Skeleton_Shield2" parent="YSort/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 367, 101 )
 
 [node name="Berserker" parent="YSort/Enemies" instance=ExtResource( 10 )]
-position = Vector2( 280, 73 )
+position = Vector2( 406, 200 )
 
 [node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 24 )]
 position = Vector2( 137, 147 )
