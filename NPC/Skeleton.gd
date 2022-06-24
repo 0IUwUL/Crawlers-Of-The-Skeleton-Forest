@@ -5,6 +5,7 @@ var knockback = Vector2.ZERO
 const DeathEffect = preload("res://Effects/SkeletonDeath.tscn")
 
 onready var stats = $Stats
+onready var cond = FloorCond
 onready var playerDetection = $PlayerDetection
 onready var hurtbox = $Hurtbox
 onready var animationtree = $AnimationTree
@@ -106,6 +107,7 @@ func _on_Hurtbox_area_entered(area):
 	
 func _on_Stats_no_health():
 	queue_free()
+	cond.enemies -= 1
 	var skeletonDeath = DeathEffect.instance()
 	get_parent().add_child(skeletonDeath)
 	skeletonDeath.global_position = global_position

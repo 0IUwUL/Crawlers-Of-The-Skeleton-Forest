@@ -1,41 +1,41 @@
 [gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://World/Trees/TallBush.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_Grass.png" type="Texture" id=3]
-[ext_resource path="res://World/Trees/Tree2_WBerries.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/Rock_Structure/Statue_Praying.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Trees/AnotherTree1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://World/Rock_Structure/Tomb_Horizontal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=8]
-[ext_resource path="res://World/Trees/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://World/Rock_Structure/Tomb_Vertical.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/Trees/Tree1_WBerries.tscn" type="PackedScene" id=11]
-[ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=12]
-[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=13]
-[ext_resource path="res://World/Stone/Small_Rock2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://World/Trees/Stump.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Items and objects/Big Rock.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-vertical.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Map Layout/Flowers/Flower-3.png" type="Texture" id=18]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Dirt.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Dark_D.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Bright_D.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-horizontal.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Bright_D.png" type="Texture" id=24]
-[ext_resource path="res://World/Stone/Big_Rock.tscn" type="PackedScene" id=25]
-[ext_resource path="res://World/Stone/SmallRock3.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Dark_D.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Items and objects/TX Plant.png" type="Texture" id=28]
-[ext_resource path="res://UI/MapAdvance.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_Grass.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Rock_Structure/Statue_Praying.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/MapAdvance.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Stone/SmallRock3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Trees/Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Trees/AnotherTree1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Stone/Small_Rock2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Rock_Structure/Tomb_Vertical.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/Trees/Stump.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Rock_Structure/Tomb_Horizontal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Trees/Tree1_WBerries.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/Stone/Big_Rock.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/Trees/TallBush.tscn" type="PackedScene" id=17]
+[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=18]
+[ext_resource path="res://World/Trees/Tree2_WBerries.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-horizontal.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Items and objects/Big Rock.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Items and objects/TX Plant.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Dark_D.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Map Layout/Flowers/Flower-3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Dirt.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Stone-path-tileset-vertical.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Bright_D.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Dark_D.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Bright_D.png" type="Texture" id=29]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=5]
 0/name = "Jose.png 0"
-0/texture = ExtResource( 8 )
+0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 32, 0, 128, 128 )
@@ -56,7 +56,7 @@ extents = Vector2( 11.75, 13.5 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Jose.png 1"
-1/texture = ExtResource( 8 )
+1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 32, 96 )
@@ -79,7 +79,7 @@ extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=7]
 8/name = "Bright_G_Dark_D.png 8"
-8/texture = ExtResource( 21 )
+8/texture = ExtResource( 23 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 352, 160 )
@@ -102,7 +102,7 @@ extents = Vector2( 11.75, 13.5 )
 8/shapes = [  ]
 8/z_index = 0
 9/name = "Bright_G_Bright_D.png 9"
-9/texture = ExtResource( 22 )
+9/texture = ExtResource( 27 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 352, 160 )
@@ -125,7 +125,7 @@ extents = Vector2( 11.75, 13.5 )
 9/shapes = [  ]
 9/z_index = 0
 10/name = "Dirt.png 10"
-10/texture = ExtResource( 20 )
+10/texture = ExtResource( 25 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 160, 32 )
@@ -146,7 +146,7 @@ extents = Vector2( 11.75, 13.5 )
 10/shapes = [  ]
 10/z_index = 0
 11/name = "Dirt.png 11"
-11/texture = ExtResource( 20 )
+11/texture = ExtResource( 25 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 32, 160, 32 )
@@ -167,7 +167,7 @@ extents = Vector2( 11.75, 13.5 )
 11/shapes = [  ]
 11/z_index = 0
 12/name = "Dark_G_Dark_D.png 12"
-12/texture = ExtResource( 27 )
+12/texture = ExtResource( 28 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 0, 352, 192 )
@@ -190,7 +190,7 @@ extents = Vector2( 11.75, 13.5 )
 12/shapes = [  ]
 12/z_index = 0
 13/name = "Dark_G_Bright_D.png 13"
-13/texture = ExtResource( 24 )
+13/texture = ExtResource( 29 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 0, 352, 192 )
@@ -215,7 +215,7 @@ extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=8]
 8/name = "Bright_G_Dark_D.png 8"
-8/texture = ExtResource( 21 )
+8/texture = ExtResource( 23 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 352, 160 )
@@ -238,7 +238,7 @@ extents = Vector2( 11.75, 13.5 )
 8/shapes = [  ]
 8/z_index = 0
 9/name = "Bright_G_Bright_D.png 9"
-9/texture = ExtResource( 22 )
+9/texture = ExtResource( 27 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 352, 160 )
@@ -261,7 +261,7 @@ extents = Vector2( 11.75, 13.5 )
 9/shapes = [  ]
 9/z_index = 0
 10/name = "Dirt.png 10"
-10/texture = ExtResource( 20 )
+10/texture = ExtResource( 25 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 160, 32 )
@@ -282,7 +282,7 @@ extents = Vector2( 11.75, 13.5 )
 10/shapes = [  ]
 10/z_index = 0
 11/name = "Dirt.png 11"
-11/texture = ExtResource( 20 )
+11/texture = ExtResource( 25 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 32, 160, 32 )
@@ -303,7 +303,7 @@ extents = Vector2( 11.75, 13.5 )
 11/shapes = [  ]
 11/z_index = 0
 12/name = "Dark_G_Dark_D.png 12"
-12/texture = ExtResource( 27 )
+12/texture = ExtResource( 28 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 0, 352, 192 )
@@ -326,7 +326,7 @@ extents = Vector2( 11.75, 13.5 )
 12/shapes = [  ]
 12/z_index = 0
 13/name = "Dark_G_Bright_D.png 13"
-13/texture = ExtResource( 24 )
+13/texture = ExtResource( 29 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 0, 352, 192 )
@@ -351,7 +351,7 @@ extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=6]
 0/name = "Bright_Grass.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 352, 160 )
@@ -374,7 +374,7 @@ extents = Vector2( 11.75, 13.5 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Bright_Grass.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 352, 0, 64, 160 )
@@ -397,7 +397,7 @@ extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "Stone-path-tileset-vertical.png 0"
-0/texture = ExtResource( 17 )
+0/texture = ExtResource( 26 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 4, 3, 31, 45 )
@@ -411,7 +411,7 @@ extents = Vector2( 11.75, 13.5 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Stone-path-tileset-vertical.png 1"
-1/texture = ExtResource( 17 )
+1/texture = ExtResource( 26 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 4, 98, 31, 38 )
@@ -425,7 +425,7 @@ extents = Vector2( 11.75, 13.5 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "Stone-path-tileset-vertical.png 2"
-2/texture = ExtResource( 17 )
+2/texture = ExtResource( 26 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 4, 53, 31, 38 )
@@ -439,7 +439,7 @@ extents = Vector2( 11.75, 13.5 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Stone-path-tileset-vertical.png 3"
-3/texture = ExtResource( 17 )
+3/texture = ExtResource( 26 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 4, 142, 31, 36 )
@@ -453,7 +453,7 @@ extents = Vector2( 11.75, 13.5 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Stone-path-tileset-horizontal.png 4"
-4/texture = ExtResource( 23 )
+4/texture = ExtResource( 20 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 3, 2, 45, 31 )
@@ -467,7 +467,7 @@ extents = Vector2( 11.75, 13.5 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Stone-path-tileset-horizontal.png 5"
-5/texture = ExtResource( 23 )
+5/texture = ExtResource( 20 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 53, 2, 38, 31 )
@@ -481,7 +481,7 @@ extents = Vector2( 11.75, 13.5 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Stone-path-tileset-horizontal.png 6"
-6/texture = ExtResource( 23 )
+6/texture = ExtResource( 20 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 98, 2, 38, 31 )
@@ -495,7 +495,7 @@ extents = Vector2( 11.75, 13.5 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Stone-path-tileset-horizontal.png 7"
-7/texture = ExtResource( 23 )
+7/texture = ExtResource( 20 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 142, 2, 36, 31 )
@@ -511,7 +511,7 @@ extents = Vector2( 11.75, 13.5 )
 
 [sub_resource type="TileSet" id=9]
 0/name = "TX Plant.png 0"
-0/texture = ExtResource( 28 )
+0/texture = ExtResource( 22 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( -2, -3, 119, 151 )
@@ -525,7 +525,7 @@ extents = Vector2( 11.75, 13.5 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "TX Plant.png 1"
-1/texture = ExtResource( 28 )
+1/texture = ExtResource( 22 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 127, -1, 97, 140 )
@@ -539,7 +539,7 @@ extents = Vector2( 11.75, 13.5 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "TX Plant.png 2"
-2/texture = ExtResource( 28 )
+2/texture = ExtResource( 22 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 234, 9, 87, 130 )
@@ -553,7 +553,7 @@ extents = Vector2( 11.75, 13.5 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "TX Plant.png 3"
-3/texture = ExtResource( 28 )
+3/texture = ExtResource( 22 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 346, 190, 40, 34 )
@@ -567,7 +567,7 @@ extents = Vector2( 11.75, 13.5 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "TX Plant.png 4"
-4/texture = ExtResource( 28 )
+4/texture = ExtResource( 22 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 280, 185, 42, 47 )
@@ -581,7 +581,7 @@ extents = Vector2( 11.75, 13.5 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "TX Plant.png 5"
-5/texture = ExtResource( 28 )
+5/texture = ExtResource( 22 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 215, 184, 48, 44 )
@@ -595,7 +595,7 @@ extents = Vector2( 11.75, 13.5 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "TX Plant.png 6"
-6/texture = ExtResource( 28 )
+6/texture = ExtResource( 22 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 155, 187, 41, 37 )
@@ -609,7 +609,7 @@ extents = Vector2( 11.75, 13.5 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "TX Plant.png 7"
-7/texture = ExtResource( 28 )
+7/texture = ExtResource( 22 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 95, 194, 33, 27 )
@@ -623,7 +623,7 @@ extents = Vector2( 11.75, 13.5 )
 7/shapes = [  ]
 7/z_index = 0
 8/name = "TX Plant.png 8"
-8/texture = ExtResource( 28 )
+8/texture = ExtResource( 22 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 33, 195, 30, 24 )
@@ -640,23 +640,23 @@ extents = Vector2( 11.75, 13.5 )
 [node name="First Floor" type="Node2D"]
 position = Vector2( 104, 46 )
 
-[node name="MapAdvance" parent="." instance=ExtResource( 29 )]
+[node name="MapAdvance" parent="." instance=ExtResource( 5 )]
 position = Vector2( -52, 210 )
-path_to_scene = "res://Room 2.tscn"
+path_to_scene = "res://Maps/Room 2.tscn"
 
 [node name="CollisionShape2D" parent="MapAdvance" index="0"]
 position = Vector2( 409, -199.5 )
 shape = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 324, 7 )
+position = Vector2( -52, 210 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [node name="Jose" type="TileMap" parent="."]
 z_index = 1
@@ -704,179 +704,172 @@ polygon = PoolVector2Array( -105, -47, -104, 224, -74, 224, -74, 219, -99, 219, 
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 324, 7 )
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -52, 210 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="Big_Rock" parent="YSort" instance=ExtResource( 25 )]
-position = Vector2( 73, 215 )
+[node name="Big_Rock" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 75, 204 )
 
-[node name="Big_Rock2" parent="YSort" instance=ExtResource( 25 )]
-position = Vector2( 259, 214 )
+[node name="Big_Rock2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 259, 202 )
 
 [node name="Flower-3" type="Sprite" parent="YSort"]
 position = Vector2( 91, -10 )
-texture = ExtResource( 18 )
+texture = ExtResource( 24 )
 
-[node name="Tree2_WBerries2" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries2" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( 162, 182 )
 
 [node name="Flower-4" type="Sprite" parent="YSort"]
 position = Vector2( 182, -9 )
-texture = ExtResource( 18 )
+texture = ExtResource( 24 )
 
-[node name="Statue_Praying" parent="YSort" instance=ExtResource( 5 )]
+[node name="Statue_Praying" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 133, -38 )
 
-[node name="TallBush2" parent="YSort" instance=ExtResource( 1 )]
+[node name="TallBush2" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( -22, 143 )
 
-[node name="TallBush" parent="YSort" instance=ExtResource( 1 )]
+[node name="TallBush" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( -92, 144 )
 
-[node name="Tree" parent="YSort" instance=ExtResource( 9 )]
+[node name="Tree" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -78, -47 )
 
-[node name="Tomb_Vertical2" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical2" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 112, -33 )
 
-[node name="Tree5" parent="YSort" instance=ExtResource( 9 )]
+[node name="Tree5" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 312, 141 )
 
-[node name="Tree3" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 313, 197 )
+[node name="Tree3" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 310, 187 )
 
-[node name="Tomb_Vertical3" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical3" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 159, -32 )
 
-[node name="Tree4" parent="YSort" instance=ExtResource( 9 )]
+[node name="Tree4" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 351, 142 )
 
-[node name="Tree2_WBerries" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( 310, -49 )
 
-[node name="Tree6" parent="YSort" instance=ExtResource( 9 )]
+[node name="Tree6" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 351, 99 )
 
-[node name="Tomb_Horizontal" parent="YSort" instance=ExtResource( 7 )]
+[node name="Tomb_Horizontal" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 118, -13 )
 
-[node name="Tomb_Horizontal2" parent="YSort" instance=ExtResource( 7 )]
+[node name="Tomb_Horizontal2" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 159, -13 )
 
-[node name="AnotherTree1" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 353, 205 )
+[node name="AnotherTree1" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 353, 195 )
 
-[node name="SmallRock6" parent="YSort" instance=ExtResource( 26 )]
+[node name="SmallRock6" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 131, 210 )
 
-[node name="SmallRock7" parent="YSort" instance=ExtResource( 26 )]
+[node name="SmallRock7" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 196, 204 )
 
-[node name="AnotherTree2" parent="YSort" instance=ExtResource( 6 )]
+[node name="AnotherTree2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -91, 103 )
 
-[node name="AnotherTree3" parent="YSort" instance=ExtResource( 6 )]
+[node name="AnotherTree3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -96, 50 )
 
-[node name="Tree2_WBerries3" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries3" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( 311, 99 )
 
-[node name="TallBush3" parent="YSort" instance=ExtResource( 1 )]
+[node name="TallBush3" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 364, -20 )
 
-[node name="Tree1_WBerries" parent="YSort" instance=ExtResource( 11 )]
+[node name="Tree1_WBerries" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 229, -44 )
 
-[node name="Tree2_WBerries4" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries4" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( 269, -46 )
 
-[node name="Stump" parent="YSort" instance=ExtResource( 15 )]
+[node name="Stump" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 197, -34 )
 
-[node name="TallBush4" parent="YSort" instance=ExtResource( 1 )]
+[node name="TallBush4" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 365, 50 )
 
-[node name="Stump2" parent="YSort" instance=ExtResource( 15 )]
+[node name="Stump2" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 47, -32 )
 
-[node name="Tree1_WBerries2" parent="YSort" instance=ExtResource( 11 )]
+[node name="Tree1_WBerries2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 16, -39 )
 
-[node name="Tree2_WBerries5" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries5" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( -31, -44 )
 
-[node name="Small_Rock2" parent="YSort" instance=ExtResource( 14 )]
+[node name="Small_Rock2" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 10, 78 )
 
-[node name="Tomb_Vertical6" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical6" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -90, 210 )
 
-[node name="Tomb_Vertical7" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical7" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -33, 210 )
 
-[node name="Tomb_Vertical8" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical8" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -90, 187 )
 
-[node name="Tomb_Vertical9" parent="YSort" instance=ExtResource( 10 )]
+[node name="Tomb_Vertical9" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -33, 187 )
 
-[node name="Tree2_WBerries6" parent="YSort" instance=ExtResource( 4 )]
+[node name="Tree2_WBerries6" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( -86, -17 )
 
-[node name="SmallRock3" parent="YSort" instance=ExtResource( 26 )]
+[node name="SmallRock3" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 269, 76 )
 
 [node name="BigRock" type="Sprite" parent="YSort"]
 position = Vector2( 412, -31 )
-texture = ExtResource( 16 )
+texture = ExtResource( 21 )
 
 [node name="Enemies" type="YSort" parent="YSort"]
 
-[node name="Skeleton11" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 273, 182 )
-
-[node name="Skeleton9" parent="YSort/Enemies" instance=ExtResource( 12 )]
+[node name="Skeleton9" parent="YSort/Enemies" instance=ExtResource( 9 )]
 position = Vector2( -79, 28 )
 
-[node name="Slime2" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 289, 34 )
+[node name="Slime2" parent="YSort/Enemies" instance=ExtResource( 18 )]
+position = Vector2( 299, 64 )
 
-[node name="Slime" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( -52, 115 )
+[node name="Slime5" parent="YSort/Enemies" instance=ExtResource( 18 )]
+position = Vector2( -13, 113 )
 scale = Vector2( 0.762921, 0.883371 )
 
-[node name="Slime5" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 345, -14 )
-scale = Vector2( 0.762921, 0.883371 )
-
-[node name="Skeleton4" parent="YSort/Enemies" instance=ExtResource( 12 )]
+[node name="Skeleton4" parent="YSort/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 189, 20 )
 
-[node name="Slime12" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 246, 88 )
+[node name="Slime12" parent="YSort/Enemies" instance=ExtResource( 18 )]
+position = Vector2( 246, 73 )
 
-[node name="Slime13" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 92, 155 )
+[node name="Slime14" parent="YSort/Enemies" instance=ExtResource( 18 )]
+position = Vector2( -91, 168 )
 
-[node name="Slime15" parent="YSort/Enemies" instance=ExtResource( 13 )]
+[node name="Slime15" parent="YSort/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 16, -4 )
 
-[node name="Skeleton7" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 149, 62 )
+[node name="Skeleton7" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 342, 13 )
 
-[node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 104, 112 )
+[node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 176, 112 )
 
-[node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 12 )]
+[node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 83, 17 )
 
-[node name="Skeleton3" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 23, 101 )
+[node name="Skeleton3" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 73, 108 )
 
-[node name="Skeleton5" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 204, 115 )
+[node name="Skeleton5" parent="YSort/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 267, 164 )
 
 [editable path="MapAdvance"]

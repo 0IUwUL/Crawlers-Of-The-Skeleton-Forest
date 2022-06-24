@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 export var max_enemies = 12 setget set_max_enemies
 var enemies = max_enemies setget set_enemies
@@ -18,8 +18,11 @@ func set_max_enemies(value):
 
 func set_enemies(h):
 	enemies = h
-	emit_signal("health_changed", enemies)
+	print(enemies)
+	print("hi")
+	emit_signal("enemies_changed", enemies)
 	if enemies <= 0:
+		print("done")
 		emit_signal("no_enemies")
 	
 

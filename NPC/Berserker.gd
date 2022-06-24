@@ -5,6 +5,7 @@ var knockback = Vector2.ZERO
 const DeathEffect = preload("res://Effects/BerserkerDead.tscn")
 
 onready var stats = $Stats
+onready var status = FloorCond
 onready var playerDetection = $PlayerDetection
 onready var hurtbox = $Hurtbox
 onready var animationtree = $AnimationTree
@@ -82,6 +83,7 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	queue_free()
+	status.enemies -= 1
 	var BerserkerDeath = DeathEffect.instance()
 	get_parent().add_child(BerserkerDeath)
 	BerserkerDeath.global_position = global_position

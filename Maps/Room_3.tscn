@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dirt.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Dark_D.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://World/Rock_Structure/Cross_Thin.tscn" type="PackedScene" id=23]
 [ext_resource path="res://NPC/Skeleton.tscn" type="PackedScene" id=24]
 [ext_resource path="res://UI/MapAdvance.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Maps/3rd_Floor_Next_Scene.gd" type="Script" id=26]
 
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 41.5, 10 )
@@ -843,7 +844,8 @@ extents = Vector2( 41, 13 )
 [node name="Room_3" type="Node2D"]
 
 [node name="Return_2nd_Floor" parent="." instance=ExtResource( 25 )]
-path_to_scene = "res://Room 2_Return.tscn"
+script = ExtResource( 26 )
+path_to_scene = "res://Maps/Room 2_Return.tscn"
 
 [node name="CollisionShape2D" parent="Return_2nd_Floor" index="0"]
 position = Vector2( 239.5, 245 )
@@ -960,8 +962,12 @@ position = Vector2( 406, 200 )
 [node name="Skeleton2" parent="YSort/Enemies" instance=ExtResource( 24 )]
 position = Vector2( 137, 147 )
 
+[node name="Berserker2" parent="YSort/Enemies" instance=ExtResource( 10 )]
+position = Vector2( 327, 39 )
+
 [node name="Advance_Boss_Room" parent="." instance=ExtResource( 25 )]
-path_to_scene = "res://Boss Room awit.tscn"
+script = ExtResource( 26 )
+path_to_scene = "res://Maps/Boss Room awit.tscn"
 
 [node name="CollisionShape2D" parent="Advance_Boss_Room" index="0"]
 position = Vector2( 239, 6 )

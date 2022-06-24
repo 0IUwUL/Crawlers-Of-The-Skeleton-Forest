@@ -18,13 +18,10 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_Grass.png" type="Texture" id=18]
-[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Maps/2nd_Floor_Next_Scene.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 17.5, 10 )
-
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 10, 14.5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
 points = PoolVector2Array( 14.8611, 4.05025, 16.8082, 2.72618, 47.4176, 2.88195, 50.0658, 6.6205, 50.2215, 9.26865, 47.7292, 12.2283, 42.2771, 12.0726, 40.33, 13.2409, 15.2505, 13.0072, 11.0446, 13.163, 9.72055, 12.3841, 8.94169, 11.1379, 8.78592, 7.71091, 10.9667, 4.36179 )
@@ -1600,31 +1597,28 @@ points = PoolVector2Array( 5.7373, 2.63696, 9.29042, 0.537354, 14.2971, 0.537354
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 10, 14.5 )
+
 [node name="Room 2" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="Return_1st_Floor" parent="." instance=ExtResource( 13 )]
-path_to_scene = "res://Room_3.tscn"
+[node name="Advance_3rd_Floor" parent="." instance=ExtResource( 13 )]
+script = ExtResource( 19 )
+path_to_scene = "res://Maps/Room_3.tscn"
 
-[node name="CollisionShape2D" parent="Return_1st_Floor" index="0"]
+[node name="CollisionShape2D" parent="Advance_3rd_Floor" index="0"]
 position = Vector2( 257.5, 22 )
 shape = SubResource( 26 )
-
-[node name="Advance_2nd_Floor" parent="." instance=ExtResource( 13 )]
-path_to_scene = "res://First Floor_Return.tscn"
-
-[node name="CollisionShape2D" parent="Advance_2nd_Floor" index="0"]
-position = Vector2( 10, 240.5 )
-shape = SubResource( 27 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 72, 233 )
+position = Vector2( 258, 69 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
@@ -1716,7 +1710,7 @@ tile_data = PoolIntArray( -1703902, 0, 65539, -1638367, 0, 196610, -1638354, 0, 
 z_index = 1
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 72, 233 )
+position = Vector2( 258, 69 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
@@ -1752,22 +1746,16 @@ position = Vector2( 464, 176 )
 position = Vector2( 464, 232 )
 
 [node name="Skeleton_Shield" parent="YSort" instance=ExtResource( 14 )]
-position = Vector2( 104, 88 )
+position = Vector2( 169, 115 )
 
 [node name="Skeleton2" parent="YSort" instance=ExtResource( 15 )]
-position = Vector2( 412, 79 )
+position = Vector2( 384, 163 )
 
 [node name="Skeleton3" parent="YSort" instance=ExtResource( 15 )]
-position = Vector2( 320, 249 )
-
-[node name="Slime" parent="YSort" instance=ExtResource( 19 )]
-position = Vector2( 179, 157 )
-
-[node name="Slime2" parent="YSort" instance=ExtResource( 19 )]
-position = Vector2( 377, 168 )
+position = Vector2( 117, 166 )
 
 [node name="Lancer2" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 266, 118 )
+position = Vector2( 258, 169 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -1777,5 +1765,13 @@ polygon = PoolVector2Array( 0, 0, 480, 0, 480, 64, 272, 64, 272, 16, 240, 16, 24
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 0, 272, 480, 272, 480, 64, 472, 64, 472, 256, 8, 256, 8, 64 )
 
-[editable path="Return_1st_Floor"]
-[editable path="Advance_2nd_Floor"]
+[node name="Return_Floor_1" parent="." instance=ExtResource( 13 )]
+script = ExtResource( 19 )
+path_to_scene = "res://Maps/First Floor_Return.tscn"
+
+[node name="CollisionShape2D" parent="Return_Floor_1" index="0"]
+position = Vector2( 10, 240.5 )
+shape = SubResource( 27 )
+
+[editable path="Advance_3rd_Floor"]
+[editable path="Return_Floor_1"]

@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Crawlers Of The Skeleton Forest"
-run/main_scene="res://First Floor.tscn"
+run/main_scene="res://Maps/First Floor.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 PlayerStats="*res://Player/Player Stats.tscn"
+FloorCond="*res://Maps/Floor_Cond.tscn"
 
 [display]
 

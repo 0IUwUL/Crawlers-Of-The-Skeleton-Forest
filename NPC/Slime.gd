@@ -5,6 +5,7 @@ const DeathEffect = preload("res://Effects/SlimeDeath.tscn")
 var knockback = Vector2.ZERO
 
 onready var stats = $Stats
+onready var cond = FloorCond
 onready var playerDetection = $PlayerDetection
 onready var hurtbox = $Hurtbox
 onready var animationtree = $AnimationTree
@@ -92,6 +93,7 @@ func state_Done():
 	
 func _on_Stats_no_health():
 	queue_free()
+	cond.enemies -= 1
 	var slimeDeath = DeathEffect.instance()
 	get_parent().add_child(slimeDeath)
 	slimeDeath.global_position = global_position
