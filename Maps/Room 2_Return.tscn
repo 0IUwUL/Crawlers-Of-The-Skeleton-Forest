@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Earth-tileset.png" type="Texture" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_Grass.png" type="Texture" id=18]
 [ext_resource path="res://Maps/2nd_Floor_Next_Scene.gd" type="Script" id=19]
+[ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=20]
+[ext_resource path="res://NPC/Slime.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 17.5, 10 )
@@ -1613,6 +1616,11 @@ path_to_scene = "res://Maps/Room_3.tscn"
 position = Vector2( 257.5, 22 )
 shape = SubResource( 26 )
 
+[node name="AnimatedSprite" parent="Advance_3rd_Floor" instance=ExtResource( 20 )]
+position = Vector2( 260, 18 )
+
+[node name="Transition_Screen" parent="Advance_3rd_Floor" instance=ExtResource( 22 )]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 16 )]
@@ -1749,10 +1757,16 @@ position = Vector2( 464, 232 )
 position = Vector2( 169, 115 )
 
 [node name="Skeleton2" parent="YSort" instance=ExtResource( 15 )]
-position = Vector2( 384, 163 )
+position = Vector2( 356, 94 )
 
 [node name="Skeleton3" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 117, 166 )
+
+[node name="Slime2" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 122, 232 )
+
+[node name="Slime" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 366, 213 )
 
 [node name="Lancer2" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 258, 169 )
@@ -1773,5 +1787,15 @@ path_to_scene = "res://Maps/First Floor_Return.tscn"
 position = Vector2( 10, 240.5 )
 shape = SubResource( 27 )
 
+[node name="AnimatedSprite" parent="Return_Floor_1" instance=ExtResource( 20 )]
+position = Vector2( 6, 242 )
+
+[node name="Transition_Screen" parent="Return_Floor_1" instance=ExtResource( 22 )]
+
+[connection signal="transition" from="Advance_3rd_Floor/Transition_Screen" to="Advance_3rd_Floor" method="_on_Transition_Screen_transition"]
+[connection signal="transition" from="Return_Floor_1/Transition_Screen" to="Return_Floor_1" method="_on_Transition_Screen_transition"]
+
 [editable path="Advance_3rd_Floor"]
+[editable path="Advance_3rd_Floor/Transition_Screen"]
 [editable path="Return_Floor_1"]
+[editable path="Return_Floor_1/Transition_Screen"]

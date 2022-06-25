@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Trees/Long_Log.tscn" type="PackedScene" id=2]
@@ -35,6 +35,8 @@
 [ext_resource path="res://Assets/Map Layout/TX Props.png" type="Texture" id=33]
 [ext_resource path="res://Effects/WhiteColor.gdshader" type="Shader" id=34]
 [ext_resource path="res://NPC/Slime_OP.gd" type="Script" id=35]
+[ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Maps/Floor_Animation.gd" type="Script" id=37]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Pattern_1"
@@ -1081,6 +1083,7 @@ shader_param/active = true
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [node name="Boss Room awit" type="Node2D"]
+script = ExtResource( 37 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 247, 245 )
@@ -1539,9 +1542,12 @@ position = Vector2( 202, 98 )
 [node name="Lancer" parent="YSort/Enemies" instance=ExtResource( 29 )]
 position = Vector2( 297, 99 )
 
+[node name="Transition_Screen" parent="." instance=ExtResource( 36 )]
+
 [editable path="YSort/Enemies/Slime"]
 [editable path="YSort/Enemies/Slime/Hurtbox"]
 [editable path="YSort/Enemies/Slime/PlayerDetection"]
 [editable path="YSort/Enemies/Slime/HitBox"]
 [editable path="YSort/Enemies/Slime/EnemyAttackAnimate"]
 [editable path="YSort/Enemies/Slime/SoftCollision"]
+[editable path="Transition_Screen"]
