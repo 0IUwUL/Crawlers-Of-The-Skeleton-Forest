@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dirt.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Dark_D.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Maps/3rd_Floor_Next_Scene.gd" type="Script" id=26]
 [ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=28]
+[ext_resource path="res://UI/Floor_Text_3.tscn" type="PackedScene" id=29]
 
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 20, 15 )
@@ -986,6 +987,8 @@ shape = SubResource( 29 )
 position = Vector2( 240, 2 )
 
 [node name="Transition_Screen" parent="Advance_Boss_Room" instance=ExtResource( 28 )]
+
+[node name="Floor_Text_3" parent="." instance=ExtResource( 29 )]
 
 [connection signal="transition" from="Return_2nd_Floor/Transition_Screen" to="Return_2nd_Floor" method="_on_Transition_Screen_transition"]
 [connection signal="transition" from="Advance_Boss_Room/Transition_Screen" to="Advance_Boss_Room" method="_on_Transition_Screen_transition"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_Grass.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_G_Bright_D.png" type="Texture" id=29]
 [ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=31]
+[ext_resource path="res://UI/Floor_Text.tscn" type="PackedScene" id=32]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 11.75, 13.5 )
@@ -880,6 +881,8 @@ position = Vector2( 73, 108 )
 
 [node name="Skeleton5" parent="YSort/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 267, 164 )
+
+[node name="Floor_Text" parent="." instance=ExtResource( 32 )]
 
 [connection signal="transition" from="MapAdvance/Transition_Screen" to="MapAdvance" method="_on_Transition_Screen_transition"]
 

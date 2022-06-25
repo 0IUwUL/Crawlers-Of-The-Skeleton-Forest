@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Earth-tileset.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Maps/2nd_Floor_Next_Scene.gd" type="Script" id=20]
 [ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Floor_Text_2.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 17.5, 10 )
@@ -1791,6 +1792,8 @@ polygon = PoolVector2Array( 0, 0, 480, 0, 480, 64, 272, 64, 272, 16, 240, 16, 24
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 0, 272, 480, 272, 480, 64, 472, 64, 472, 256, 8, 256, 8, 64 )
+
+[node name="Floor_Text_2" parent="." instance=ExtResource( 23 )]
 
 [connection signal="transition" from="Advance/Transition_Screen" to="Advance" method="_on_Transition_Screen_transition"]
 [connection signal="transition" from="Return/Transition_Screen" to="Return" method="_on_Transition_Screen_transition"]
