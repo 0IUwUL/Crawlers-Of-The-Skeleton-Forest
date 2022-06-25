@@ -988,6 +988,7 @@ position = Vector2( 240, 2 )
 [node name="Transition_Screen" parent="Advance_Boss_Room" instance=ExtResource( 28 )]
 
 [connection signal="transition" from="Return_2nd_Floor/Transition_Screen" to="Return_2nd_Floor" method="_on_Transition_Screen_transition"]
+[connection signal="transition" from="Advance_Boss_Room/Transition_Screen" to="Advance_Boss_Room" method="_on_Transition_Screen_transition"]
 
 [editable path="Return_2nd_Floor"]
 [editable path="Return_2nd_Floor/Transition_Screen"]

@@ -6,6 +6,7 @@ onready var cond = FloorCond
 onready var collision = $CollisionShape2D
 onready var animation = $AnimatedSprite
 onready var transition = $Transition_Screen
+
 func _ready():
 	cond.enemies = 12
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Trees/Long_Log.tscn" type="PackedScene" id=2]
@@ -36,7 +36,12 @@
 [ext_resource path="res://Effects/WhiteColor.gdshader" type="Shader" id=34]
 [ext_resource path="res://NPC/Slime_OP.gd" type="Script" id=35]
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=36]
-[ext_resource path="res://Maps/Floor_Animation.gd" type="Script" id=37]
+[ext_resource path="res://Maps/Final_Scene.gd" type="Script" id=37]
+[ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=38]
+[ext_resource path="res://UI/MapAdvance.tscn" type="PackedScene" id=39]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 14.5, 10 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "Pattern_1"
@@ -1083,7 +1088,19 @@ shader_param/active = true
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [node name="Boss Room awit" type="Node2D"]
+
+[node name="MapAdvance" parent="." instance=ExtResource( 39 )]
 script = ExtResource( 37 )
+path_to_scene = "res://Maps/GameOver.tscn"
+
+[node name="CollisionShape2D" parent="MapAdvance" index="0"]
+position = Vector2( 243.5, 53 )
+shape = SubResource( 7 )
+
+[node name="AnimatedSprite" parent="MapAdvance" instance=ExtResource( 38 )]
+position = Vector2( 246, 53 )
+
+[node name="Transition_Screen" parent="MapAdvance" instance=ExtResource( 36 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 247, 245 )
@@ -1121,6 +1138,7 @@ tile_data = PoolIntArray( -2555952, 23, 0, -2555944, 23, 0, -2555936, 23, 0, -25
 
 [node name="Walls_Ritual" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
+z_index = -1
 tile_set = SubResource( 5 )
 cell_size = Vector2( 8, 8 )
 format = 1
@@ -1513,8 +1531,6 @@ parameters/playback = SubResource( 4 )
 [node name="Skeleton_Shield3" parent="YSort/Enemies" instance=ExtResource( 27 )]
 position = Vector2( 267, 93 )
 
-[node name="Skeleton_Shield2" parent="YSort/Enemies" instance=ExtResource( 27 )]
-
 [node name="Skeleton_Shield" parent="YSort/Enemies" instance=ExtResource( 27 )]
 position = Vector2( 239, 94 )
 
@@ -1542,12 +1558,13 @@ position = Vector2( 202, 98 )
 [node name="Lancer" parent="YSort/Enemies" instance=ExtResource( 29 )]
 position = Vector2( 297, 99 )
 
-[node name="Transition_Screen" parent="." instance=ExtResource( 36 )]
+[connection signal="transition" from="MapAdvance/Transition_Screen" to="MapAdvance" method="_on_Transition_Screen_transition"]
 
+[editable path="MapAdvance"]
+[editable path="MapAdvance/Transition_Screen"]
 [editable path="YSort/Enemies/Slime"]
 [editable path="YSort/Enemies/Slime/Hurtbox"]
 [editable path="YSort/Enemies/Slime/PlayerDetection"]
 [editable path="YSort/Enemies/Slime/HitBox"]
 [editable path="YSort/Enemies/Slime/EnemyAttackAnimate"]
 [editable path="YSort/Enemies/Slime/SoftCollision"]
-[editable path="Transition_Screen"]

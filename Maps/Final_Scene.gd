@@ -8,7 +8,7 @@ onready var animation = $AnimatedSprite
 onready var transition = $Transition_Screen
 
 func _ready():
-	cond.enemies = 1
+	cond.enemies = 10
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	collision.set_deferred("disabled", true)
 	transition._load()
@@ -20,7 +20,6 @@ func _on_MapAdvance_body_entered(_body):
 	change_scene()
 	
 func _on_Status_No_Enemies():
-	print("off")
 	collision.set_deferred("disabled", false)
 	animation.visible = true
 	animation.play("Portal")

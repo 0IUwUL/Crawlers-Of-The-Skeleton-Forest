@@ -18,10 +18,8 @@ func set_max_enemies(value):
 
 func set_enemies(h):
 	enemies = h
-	print(enemies)
 	emit_signal("enemies_changed", enemies)
 	if enemies <= 0:
-		print("off")
 		emit_signal("no_enemies")
 	
 
