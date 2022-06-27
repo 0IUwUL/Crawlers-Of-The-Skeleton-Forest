@@ -50,7 +50,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "FINAL FLOOR:
 
-THE CROWN ROOM"
+THE THRONE ROOM"
 align = 1
 uppercase = true
 percent_visible = 0.0

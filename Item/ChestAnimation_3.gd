@@ -10,7 +10,7 @@ const Potion = preload("res://Item/Potion.tscn")
 var interact
 
 func _ready():
-	cond.enemies = 10
+	cond.enemies = 6
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	coll.set_deferred("disabled", true)
 	chestAnimation.visible = false

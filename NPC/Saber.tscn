@@ -777,6 +777,7 @@ Friction = 100
 Acceleration = 150
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 shape = SubResource( 14 )
@@ -802,6 +803,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="EnemyAttackAnimate" parent="." instance=ExtResource( 7 )]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

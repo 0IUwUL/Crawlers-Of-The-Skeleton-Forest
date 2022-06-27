@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dirt.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Bright_G_Dark_D.png" type="Texture" id=2]
@@ -29,9 +29,8 @@
 [ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=28]
 [ext_resource path="res://UI/Floor_Text_3.tscn" type="PackedScene" id=29]
-
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 20, 15 )
+[ext_resource path="res://Item/ChestAnimation_3.gd" type="Script" id=30]
+[ext_resource path="res://Item/ChestAnimation.tscn" type="PackedScene" id=31]
 
 [sub_resource type="TileSet" id=4]
 0/name = "Jose.png 0"
@@ -844,20 +843,10 @@ points = PoolVector2Array( 14.8611, 4.05025, 16.8082, 2.72618, 47.4176, 2.88195,
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 21, 13 )
 
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 20, 15 )
+
 [node name="Room_3" type="Node2D"]
-
-[node name="Return_2nd_Floor" parent="." instance=ExtResource( 25 )]
-script = ExtResource( 26 )
-path_to_scene = "res://Maps/Room 2_Return.tscn"
-
-[node name="CollisionShape2D" parent="Return_2nd_Floor" index="0"]
-position = Vector2( 238, 248 )
-shape = SubResource( 30 )
-
-[node name="AnimatedSprite" parent="Return_2nd_Floor" instance=ExtResource( 27 )]
-position = Vector2( 240, 255 )
-
-[node name="Transition_Screen" parent="Return_2nd_Floor" instance=ExtResource( 28 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -975,26 +964,45 @@ position = Vector2( 137, 147 )
 [node name="Berserker2" parent="YSort/Enemies" instance=ExtResource( 10 )]
 position = Vector2( 327, 39 )
 
-[node name="Advance_Boss_Room" parent="." instance=ExtResource( 25 )]
+[node name="Interactable" type="YSort" parent="YSort"]
+
+[node name="Advance_Boss_Room" parent="YSort/Interactable" instance=ExtResource( 25 )]
 script = ExtResource( 26 )
 path_to_scene = "res://Maps/Boss Room awit.tscn"
 
-[node name="CollisionShape2D" parent="Advance_Boss_Room" index="0"]
+[node name="CollisionShape2D" parent="YSort/Interactable/Advance_Boss_Room" index="0"]
 position = Vector2( 238, 0 )
 shape = SubResource( 29 )
 
-[node name="AnimatedSprite" parent="Advance_Boss_Room" instance=ExtResource( 27 )]
+[node name="AnimatedSprite" parent="YSort/Interactable/Advance_Boss_Room" instance=ExtResource( 27 )]
 position = Vector2( 240, 2 )
 
-[node name="Transition_Screen" parent="Advance_Boss_Room" instance=ExtResource( 28 )]
+[node name="Transition_Screen" parent="YSort/Interactable/Advance_Boss_Room" instance=ExtResource( 28 )]
+
+[node name="Return_2nd_Floor" parent="YSort/Interactable" instance=ExtResource( 25 )]
+script = ExtResource( 26 )
+path_to_scene = "res://Maps/Room 2_Return.tscn"
+
+[node name="CollisionShape2D" parent="YSort/Interactable/Return_2nd_Floor" index="0"]
+position = Vector2( 238, 248 )
+shape = SubResource( 30 )
+
+[node name="AnimatedSprite" parent="YSort/Interactable/Return_2nd_Floor" instance=ExtResource( 27 )]
+position = Vector2( 240, 255 )
+
+[node name="Transition_Screen" parent="YSort/Interactable/Return_2nd_Floor" instance=ExtResource( 28 )]
+
+[node name="ChestAnimation" parent="YSort/Interactable" instance=ExtResource( 31 )]
+position = Vector2( 242, 134 )
+script = ExtResource( 30 )
 
 [node name="Floor_Text_3" parent="." instance=ExtResource( 29 )]
 
-[connection signal="transition" from="Return_2nd_Floor/Transition_Screen" to="Return_2nd_Floor" method="_on_Transition_Screen_transition"]
-[connection signal="transition" from="Advance_Boss_Room/Transition_Screen" to="Advance_Boss_Room" method="_on_Transition_Screen_transition"]
+[connection signal="transition" from="YSort/Interactable/Advance_Boss_Room/Transition_Screen" to="YSort/Interactable/Advance_Boss_Room" method="_on_Transition_Screen_transition"]
+[connection signal="transition" from="YSort/Interactable/Return_2nd_Floor/Transition_Screen" to="YSort/Interactable/Return_2nd_Floor" method="_on_Transition_Screen_transition"]
 
-[editable path="Return_2nd_Floor"]
-[editable path="Return_2nd_Floor/Transition_Screen"]
 [editable path="YSort/Broken well"]
-[editable path="Advance_Boss_Room"]
-[editable path="Advance_Boss_Room/Transition_Screen"]
+[editable path="YSort/Interactable/Advance_Boss_Room"]
+[editable path="YSort/Interactable/Advance_Boss_Room/Transition_Screen"]
+[editable path="YSort/Interactable/Return_2nd_Floor"]
+[editable path="YSort/Interactable/Return_2nd_Floor/Transition_Screen"]

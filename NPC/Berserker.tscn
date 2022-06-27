@@ -760,6 +760,7 @@ Friction = 80
 Acceleration = 125
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 shape = SubResource( 32 )

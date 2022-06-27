@@ -10,7 +10,7 @@ const Potion = preload("res://Item/Potion.tscn")
 var interact
 
 func _ready():
-	cond.enemies = 10
+	cond.enemies = 6
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	coll.set_deferred("disabled", true)
 	chestAnimation.visible = false
@@ -52,7 +52,7 @@ func _on_PopSmoke_animation_finished():
 func potion_pop():
 	coll.set_deferred("disabled", true)
 	var value = randf()
-	
+
 	if  value <= .5:
 		print("Success")
 		var GenPotion = Potion.instance()

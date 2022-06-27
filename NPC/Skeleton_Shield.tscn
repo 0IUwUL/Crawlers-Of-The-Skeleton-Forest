@@ -831,6 +831,7 @@ Friction = 90
 Acceleration = 50
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 modulate = Color( 1, 1, 1, 0.392157 )

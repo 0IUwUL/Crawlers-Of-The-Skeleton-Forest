@@ -12,6 +12,7 @@ onready var animationstate = animationtree.get("parameters/playback")
 onready var hitbox = $Position2D/HitBox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WandererNode
+onready var cond = FloorCond
 export var TARGET_DISTANCE = 15
 
 enum {
@@ -91,6 +92,7 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	queue_free()
+	cond.enemies -= 1
 	var SaberDeath = DeathEffect.instance()
 	get_parent().add_child(SaberDeath)
 	SaberDeath.global_position = global_position

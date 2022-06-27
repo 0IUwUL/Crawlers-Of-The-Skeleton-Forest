@@ -8,7 +8,7 @@ onready var animation = $AnimatedSprite
 onready var transition = $Transition_Screen
 
 func _ready():
-	cond.enemies = 1
+	cond.enemies = 6
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	collision.set_deferred("disabled", true)
 	transition._load()
