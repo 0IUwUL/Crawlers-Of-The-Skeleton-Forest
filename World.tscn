@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://NPC/Saber.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Effects/SkeletonWShield.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Item/ChestAnimation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/NPC/Skeleton_DoubleWield.png" type="Texture" id=5]
 
 [node name="World" type="YSort"]
 
@@ -13,30 +11,13 @@
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 56, 32 )
 
-[node name="Slimes" type="YSort" parent="YSort"]
-
-[node name="Lancer" type="YSort" parent="YSort"]
-
-[node name="Skeletons" type="YSort" parent="YSort"]
-position = Vector2( 140, 17 )
-
-[node name="Saber" parent="YSort/Skeletons" instance=ExtResource( 2 )]
-position = Vector2( 93, 124 )
-
-[node name="Saber2" parent="YSort/Skeletons" instance=ExtResource( 2 )]
-position = Vector2( -25, 181 )
-
 [node name="HealthUI" parent="." instance=ExtResource( 4 )]
 margin_left = 8.0
 margin_top = 7.0
 margin_right = 155.0
 margin_bottom = 27.0
 
-[node name="SkeletonWShield" parent="." instance=ExtResource( 3 )]
-position = Vector2( 162, 195 )
-
-[node name="SkeletonDoubleWield" type="Sprite" parent="."]
-position = Vector2( 145, 145 )
-texture = ExtResource( 5 )
+[node name="ChestAnimation" parent="." instance=ExtResource( 2 )]
+position = Vector2( 212, 139 )
 
 [editable path="HealthUI"]

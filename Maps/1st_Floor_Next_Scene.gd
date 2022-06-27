@@ -20,7 +20,6 @@ func _on_MapAdvance_body_entered(_body):
 	change_scene()
 	
 func _on_Status_No_Enemies():
-	print("off")
 	collision.set_deferred("disabled", false)
 	animation.visible = true
 	animation.play("Portal")
