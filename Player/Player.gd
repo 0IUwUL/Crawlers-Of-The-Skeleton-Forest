@@ -28,9 +28,9 @@ func _ready():
 	stats.connect("no_health", self, "_on_PlayerStats_no_health")
 	animationtree.active = true
 	swordhitbox.knockback_vector = roll_vector
-	swordhitbox.damage = stats.Cdamage
-
+	
 func _physics_process(delta):
+	swordhitbox.damage = stats.damage
 	match state:
 		MOVE:
 			move_state(delta)

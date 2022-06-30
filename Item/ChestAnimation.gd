@@ -11,7 +11,7 @@ const Str = preload("res://Item/Str_Potion.tscn")
 var interact
 
 func _ready():
-	cond.enemies = 10
+	cond.enemies = 1
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	coll.set_deferred("disabled", true)
 	chestAnimation.visible = false
@@ -53,49 +53,56 @@ func _on_PopSmoke_animation_finished():
 func potion_pop():
 	coll.set_deferred("disabled", true)
 	var value = randf()
-#	var value = .5
-#	var hit = .2
-#	var lucky = .05
+	var s = randf()
+	var r = randf()
+	var b = randf()
 	
+	if  value <= .8:
+		print("potion1: ", value)
+		var GenPotion = Potion.instance()
+		GenPotion.position = Vector2(self.position.x, self.position.y)
+		get_parent().call_deferred("add_child", GenPotion)
+		if s <= .25:
+			print("str1: ", s)
+			var StrPotion = Str.instance()
+			StrPotion.position = Vector2(self.position.x - 10, self.position.y)
+			get_parent().call_deferred("add_child", StrPotion)
+			if r <= .1:
+				print("str2: ", r)
+				var StrPotion1 = Str.instance()
+				StrPotion1.position = Vector2(self.position.x + 10, self.position.y)
+				get_parent().call_deferred("add_child", StrPotion1)
+			else:
+				print("potion2: ", r)
+				if randf() <= .5:
+					var GenPotion1 = Potion.instance()
+					GenPotion1.position = Vector2(self.position.x + 10, self.position.y)
+					get_parent().call_deferred("add_child", GenPotion1)
+
+		elif s <= .55:
+			print("potion3: ", s)
+			var GenPotion2 = Potion.instance()
+			GenPotion2.position = Vector2(self.position.x - 10, self.position.y)
+			get_parent().call_deferred("add_child", GenPotion2)
+			if b <= .05:
+				print("potion3: ", b)
+				var StrPotion2 = Str.instance()
+				StrPotion2.position = Vector2(self.position.x + 10, self.position.y)
+				get_parent().call_deferred("add_child", StrPotion2)
+		else:
+			print("s1p3: ",s)
+			pass
+	else:
+		print("p1: ", value)
+		pass
 #	if  value <= .5:
-#		print("Success")
-#		var GenPotion = Potion.instance()
-#		GenPotion.position = Vector2(self.position.x, self.position.y)
-#		get_parent().call_deferred("add_child", GenPotion)
-#		if hit <= .2:
-#			var StrPotion = Str.instance()
-#			StrPotion.position = Vector2(self.position.x - 10, self.position.y)
-#			get_parent().call_deferred("add_child", StrPotion)
-#			if lucky <= .05:
-#				var StrPotion1 = Str.instance()
-#				StrPotion1.position = Vector2(self.position.x + 10, self.position.y)
-#				get_parent().call_deferred("add_child", StrPotion1)
-#			else:
-#				if randf() <= .5:
-#					var GenPotion1 = Potion.instance()
-#					GenPotion1.position = Vector2(self.position.x + 10, self.position.y)
-#					get_parent().call_deferred("add_child", GenPotion1)
-#
-#		elif randf() <= .55:
-#			var GenPotion2 = Potion.instance()
-#			GenPotion2.position = Vector2(self.position.x - 10, self.position.y)
-#			get_parent().call_deferred("add_child", GenPotion2)
-#			if randf() <= .05:
-#				var StrPotion2 = Str.instance()
-#				StrPotion2.position = Vector2(self.position.x + 10, self.position.y)
-#				get_parent().call_deferred("add_child", StrPotion2)
-#		else:
-#			pass
+#			print("Success")
+#			var GenPotion = Potion.instance()
+#			GenPotion.position = Vector2(self.position.x, self.position.y)
+#			get_parent().call_deferred("add_child", GenPotion)
+#			if randf() <= .2:
+#				var GenPotion1 = Potion.instance()
+#				GenPotion1.position = Vector2(self.position.x - 10, self.position.y)
+#				get_parent().call_deferred("add_child", GenPotion1)
 #	else:
 #		pass
-	if  value <= .5:
-			print("Success")
-			var GenPotion = Potion.instance()
-			GenPotion.position = Vector2(self.position.x, self.position.y)
-			get_parent().call_deferred("add_child", GenPotion)
-			if randf() <= .2:
-				var GenPotion1 = Potion.instance()
-				GenPotion1.position = Vector2(self.position.x - 10, self.position.y)
-				get_parent().call_deferred("add_child", GenPotion1)
-	else:
-		pass

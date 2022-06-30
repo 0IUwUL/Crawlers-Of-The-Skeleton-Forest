@@ -16,6 +16,7 @@ signal max_health_changed(value)
 
 func _ready():
 	self.health = max_health
+	self.damage = damage
 
 func set_max_health(value):
 	max_health = value
@@ -29,7 +30,7 @@ func set_health(h):
 		emit_signal("no_health")
 
 func set_damage(d):
-	Cdamage = d
-	emit_signal("damage_changed", Cdamage)
+	damage = d
+	emit_signal("damage_changed", damage)
 
 

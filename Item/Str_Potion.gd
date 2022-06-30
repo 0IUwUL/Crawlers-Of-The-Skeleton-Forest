@@ -8,5 +8,5 @@ func _ready():
 	player.play("Out")
 
 func _on_Potion_body_entered(_body):
-	stats.Cdamage += 1
+	stats.damage += 1
 	queue_free()
