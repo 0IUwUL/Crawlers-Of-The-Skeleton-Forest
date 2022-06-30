@@ -19,10 +19,13 @@ region = Rect2( 96, 210, 48, 30 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "Dead",
 "speed": 5.0
 } ]
 
 [node name="CharacterDead" type="AnimatedSprite"]
 frames = SubResource( 4 )
+animation = "Dead"
 script = ExtResource( 2 )
+
+[connection signal="animation_finished" from="." to="." method="_on_CharacterDead_animation_finished"]

@@ -28,6 +28,7 @@ func _ready():
 	stats.connect("no_health", self, "_on_PlayerStats_no_health")
 	animationtree.active = true
 	swordhitbox.knockback_vector = roll_vector
+	swordhitbox.damage = stats.Cdamage
 
 func _physics_process(delta):
 	match state:
@@ -72,7 +73,7 @@ func _on_Hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
 	
 func _on_PlayerStats_no_health():
-	queue_free()
 	var playerDeath = DeathEffect.instance()
 	get_parent().add_child(playerDeath)
 	playerDeath.global_position = global_position
+	queue_free()

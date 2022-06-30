@@ -52,6 +52,7 @@ frames = SubResource( 11 )
 animation = "Chest"
 
 [node name="PopSmoke" parent="Sprite" instance=ExtResource( 4 )]
+animation = "Smoke"
 playing = false
 
 [node name="Display_Instruction" parent="." instance=ExtResource( 3 )]

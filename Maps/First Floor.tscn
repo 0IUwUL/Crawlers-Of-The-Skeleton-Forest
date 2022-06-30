@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Dark_Grass.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Jose.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Effects/Transition_Screen.tscn" type="PackedScene" id=31]
 [ext_resource path="res://UI/Floor_Text.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Item/ChestAnimation.tscn" type="PackedScene" id=33]
+[ext_resource path="res://UI/You_Died.tscn" type="PackedScene" id=34]
 
 [sub_resource type="TileSet" id=5]
 0/name = "Jose.png 0"
@@ -883,6 +884,8 @@ frame = 34
 position = Vector2( 138, 79 )
 
 [node name="Floor_Text" parent="." instance=ExtResource( 32 )]
+
+[node name="You_Died" parent="." instance=ExtResource( 34 )]
 
 [connection signal="transition" from="YSort/Interactables/MapAdvance/Transition_Screen" to="YSort/Interactables/MapAdvance" method="_on_Transition_Screen_transition"]
 

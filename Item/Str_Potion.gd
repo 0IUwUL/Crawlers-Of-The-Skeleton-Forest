@@ -8,14 +8,5 @@ func _ready():
 	player.play("Out")
 
 func _on_Potion_body_entered(_body):
-	if randf() <= .5:
-		plus = 1
-	else:
-		plus = 2
-	#poison
-	if randf() <= .1:
-		stats.health -= plus
-	#success
-	else:
-		stats.health += plus
+	stats.Cdamage += 1
 	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://World/Strange Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Trees/Long_Log.tscn" type="PackedScene" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Effects/Portal.tscn" type="PackedScene" id=38]
 [ext_resource path="res://UI/MapAdvance.tscn" type="PackedScene" id=39]
 [ext_resource path="res://UI/Final_Floor.tscn" type="PackedScene" id=40]
+[ext_resource path="res://UI/You_Died.tscn" type="PackedScene" id=41]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 14.5, 10 )
@@ -1560,6 +1561,8 @@ position = Vector2( 202, 98 )
 position = Vector2( 297, 99 )
 
 [node name="Final_Floor" parent="." instance=ExtResource( 40 )]
+
+[node name="You_Died" parent="." instance=ExtResource( 41 )]
 
 [connection signal="transition" from="MapAdvance/Transition_Screen" to="MapAdvance" method="_on_Transition_Screen_transition"]
 

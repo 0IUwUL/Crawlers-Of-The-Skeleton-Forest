@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Map Layout/Ground tileset/Earth-tileset.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://UI/Floor_Text_2.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Item/ChestAnimation_2.gd" type="Script" id=24]
 [ext_resource path="res://Item/ChestAnimation.tscn" type="PackedScene" id=25]
+[ext_resource path="res://UI/You_Died.tscn" type="PackedScene" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
 points = PoolVector2Array( 14.8611, 4.05025, 16.8082, 2.72618, 47.4176, 2.88195, 50.0658, 6.6205, 50.2215, 9.26865, 47.7292, 12.2283, 42.2771, 12.0726, 40.33, 13.2409, 15.2505, 13.0072, 11.0446, 13.163, 9.72055, 12.3841, 8.94169, 11.1379, 8.78592, 7.71091, 10.9667, 4.36179 )
@@ -1802,6 +1803,8 @@ polygon = PoolVector2Array( 0, 0, 480, 0, 480, 64, 272, 64, 272, 16, 240, 16, 24
 polygon = PoolVector2Array( 0, 0, 0, 272, 480, 272, 480, 64, 472, 64, 472, 256, 8, 256, 8, 64 )
 
 [node name="Floor_Text_2" parent="." instance=ExtResource( 23 )]
+
+[node name="You_Died" parent="." instance=ExtResource( 26 )]
 
 [connection signal="transition" from="YSort/Interactable/Return_Floor_1/Transition_Screen" to="YSort/Interactable/Return_Floor_1" method="_on_Transition_Screen_transition"]
 [connection signal="transition" from="YSort/Interactable/Advance_3rd_Floor/Transition_Screen" to="YSort/Interactable/Advance_3rd_Floor" method="_on_Transition_Screen_transition"]
