@@ -11,7 +11,7 @@ const Str = preload("res://Item/Str_Potion.tscn")
 var interact
 
 func _ready():
-	cond.enemies = 1
+	cond.enemies = 10
 	cond.connect("no_enemies", self, "_on_Status_No_Enemies")
 	coll.set_deferred("disabled", true)
 	chestAnimation.visible = false
@@ -95,14 +95,3 @@ func potion_pop():
 	else:
 		print("p1: ", value)
 		pass
-#	if  value <= .5:
-#			print("Success")
-#			var GenPotion = Potion.instance()
-#			GenPotion.position = Vector2(self.position.x, self.position.y)
-#			get_parent().call_deferred("add_child", GenPotion)
-#			if randf() <= .2:
-#				var GenPotion1 = Potion.instance()
-#				GenPotion1.position = Vector2(self.position.x - 10, self.position.y)
-#				get_parent().call_deferred("add_child", GenPotion1)
-#	else:
-#		pass

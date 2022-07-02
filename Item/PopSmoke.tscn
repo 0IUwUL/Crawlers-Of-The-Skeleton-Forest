@@ -18,7 +18,7 @@ region = Rect2( 0, 0, 12, 12 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "Smoke",
 "speed": 5.0
 } ]
 
@@ -27,4 +27,6 @@ position = Vector2( 0, 1 )
 scale = Vector2( 3.58333, 3.08333 )
 z_index = 1
 frames = SubResource( 4 )
+animation = "Smoke"
+frame = 2
 playing = true
