@@ -51,6 +51,7 @@ func _on_PopSmoke_animation_finished():
 	interact = true
 
 func potion_pop():
+	interact = false
 	coll.set_deferred("disabled", true)
 	var value = randf()
 	var s = randf()

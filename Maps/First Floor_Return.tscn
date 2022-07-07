@@ -642,7 +642,7 @@
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 11.75, 13.5 )
 
-[node name="First Floor" type="Node2D"]
+[node name="First Floor_Return" type="Node2D"]
 position = Vector2( 104, 46 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

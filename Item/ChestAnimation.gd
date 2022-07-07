@@ -22,7 +22,6 @@ func _ready():
 func _input(_event):
 	if interact:
 		if Input.is_action_just_pressed("Open"):
-			coll.set_deferred("disabled", true)
 			chestAnimation.play("Chest")
 			potion_pop()
 			
@@ -52,6 +51,7 @@ func _on_PopSmoke_animation_finished():
 	interact = true
 
 func potion_pop():
+	interact = false
 	coll.set_deferred("disabled", true)
 	var value = randf()
 	var s = randf()
