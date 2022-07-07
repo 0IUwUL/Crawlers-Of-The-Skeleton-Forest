@@ -839,10 +839,6 @@ position = Vector2( -79, 28 )
 [node name="Slime2" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 289, 34 )
 
-[node name="Slime" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( -52, 115 )
-scale = Vector2( 0.762921, 0.883371 )
-
 [node name="Slime5" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 345, -14 )
 scale = Vector2( 0.762921, 0.883371 )
@@ -851,16 +847,13 @@ scale = Vector2( 0.762921, 0.883371 )
 position = Vector2( 164, 62 )
 
 [node name="Slime12" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 246, 88 )
+position = Vector2( 233, 123 )
 
 [node name="Slime13" parent="YSort/Enemies" instance=ExtResource( 13 )]
 position = Vector2( 92, 155 )
 
-[node name="Slime15" parent="YSort/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 16, -4 )
-
 [node name="Skeleton7" parent="YSort/Enemies" instance=ExtResource( 12 )]
-position = Vector2( 190, 115 )
+position = Vector2( -12, 38 )
 
 [node name="Skeleton" parent="YSort/Enemies" instance=ExtResource( 12 )]
 position = Vector2( 104, 112 )
@@ -885,6 +878,9 @@ shape = SubResource( 10 )
 position = Vector2( 415, -197 )
 
 [node name="Transition_Screen" parent="YSort/Interactable/MapAdvance" instance=ExtResource( 31 )]
+
+[node name="ColorRect" parent="YSort/Interactable/MapAdvance/Transition_Screen" index="0"]
+visible = false
 
 [node name="ChestAnimation" parent="YSort/Interactable" instance=ExtResource( 33 )]
 position = Vector2( 134, 99 )

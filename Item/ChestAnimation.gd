@@ -22,6 +22,7 @@ func _ready():
 func _input(_event):
 	if interact:
 		if Input.is_action_just_pressed("Open"):
+			coll.set_deferred("disabled", true)
 			chestAnimation.play("Chest")
 			potion_pop()
 			
