@@ -881,6 +881,9 @@ frame = 34
 
 [node name="Transition_Screen" parent="YSort/Interactables/MapAdvance" instance=ExtResource( 31 )]
 
+[node name="ColorRect" parent="YSort/Interactables/MapAdvance/Transition_Screen" index="0"]
+visible = false
+
 [node name="ChestAnimation" parent="YSort/Interactables" instance=ExtResource( 33 )]
 position = Vector2( 138, 79 )
 
